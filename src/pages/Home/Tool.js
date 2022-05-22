@@ -11,7 +11,7 @@ const Tool = ({ tool }) => {
       <img src={img} className="h-[350px] rounded shadow-lg" alt="" />
       <p className="absolute top-3 left-2 text-xl font-semibold text-[#002341]">{name}</p>
       <div className="absolute top-72">
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center px-5 ">
+      <div className="grid grid-cols-2 justify-between items-center px-5 ">
         <div>
           <p>{price}</p>
           <div className="flex text-yellow-500 mt-1">
@@ -22,7 +22,7 @@ const Tool = ({ tool }) => {
             <FaStar />
           </div>
         </div>
-        <Link to={`/home/${_id}`}  className="ml-24 border-zinc-400 hover:text-white hover:bg-amber-600 text-zinc-600 rounded-full p-2 border-2 text-3xl">
+        <Link to={`/home/${_id}`}  className="ml-20  border-zinc-400 hover:text-white hover:bg-amber-600 text-zinc-600 rounded-full p-2 border-2 text-3xl">
           <FaShoppingBasket />
         </Link>
       </div>
