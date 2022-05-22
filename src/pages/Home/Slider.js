@@ -40,7 +40,9 @@ const Slider = () => {
               <img className=" lg:h-[250px]" src={image3} alt="" />
             </div>
           </div>
+          <h1 className="text-white font-bold mt-10 text-5xl">Shop by Category</h1>
         </div>
+       
       </div>
     </>
   );
