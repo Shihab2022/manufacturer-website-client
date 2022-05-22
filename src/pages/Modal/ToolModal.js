@@ -4,7 +4,7 @@ const ToolModal = ({tool}) => {
     return (
         <div>
 
-      <label for="my-modal-6"  class="btn modal-button">open modal</label>
+      {/* <label for="tool-modal"  class="btn modal-button">open modal</label> */}
 {/* <!-- Put this part before </body> tag --> */}
 <input type="checkbox" id="tool-modal" class="modal-toggle" />
 <div class="modal modal-bottom sm:modal-middle">
