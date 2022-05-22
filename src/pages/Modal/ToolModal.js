@@ -1,6 +1,9 @@
 import React from 'react';
+import { useForm } from "react-hook-form";
 
 const ToolModal = ({tool}) => {
+  const { register, formState: { errors }, handleSubmit } = useForm();
+  const onSubmit = data => console.log(data);
     return (
         <div>
 
@@ -9,11 +12,17 @@ const ToolModal = ({tool}) => {
 <input type="checkbox" id="tool-modal" class="modal-toggle" />
 <div class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
-    <h3 class="font-bold text-lg">Congratulations random Interner user! </h3>
-    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-    <div class="modal-action">
-      <label for="tool-modal" class="btn">Yay!</label>
-    </div>
+  <label for="tool-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+  <form onSubmit={handleSubmit(onSubmit)}>
+      <input className='input input-bordered input-info w-full max-w-xs' {...register("name", { required: true })} /> <br />
+      {errors.name?.type === 'required' && "Name is required"} <br />
+      
+      <input className='input input-bordered input-info w-full max-w-xs my-5' {...register("email", { required: true })} /> <br />
+      {errors.email && "Email name is required"}
+      
+      <input className='input input-bordered input-info bg-info w-full max-w-xs' type="submit" />
+    </form>
+   
   </div>
 </div>
         </div>

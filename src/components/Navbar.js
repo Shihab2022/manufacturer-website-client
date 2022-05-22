@@ -1,73 +1,72 @@
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
+import {  NavLink } from "react-router-dom";
 import logo from '../assets/icon/logo.png'
 const Navbar = () => {
     const [active,setActive]=useState(false)
     // console.log(active)
   return (
-    <nav class="bg-[#002341] shadow-lg">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between">
-          <div class="flex space-x-7">
+    <nav className="bg-[#002341] text-white shadow-lg">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-between">
+          <div className="flex space-x-7">
             <div>
-              <a href="#" class="flex items-center py-4 px-2">
-                <img src={logo} alt="Logo" class="h-8 w-28 mr-2" />
+              <NavLink to='/' href="#" className="flex items-center py-4 px-2">
+                <img src={logo} alt="Logo" className="h-8 w-28 mr-2" />
                 
-              </a>
+              </NavLink>
             </div>
 
-            <div class="hidden md:flex items-center space-x-1">
-              <a
+            <div className="hidden md:flex items-center space-x-1">
+              <NavLink to='/'
                 href=""
-                class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold "
+                className="py-4 px-2 text-white   font-semibold "
               >
                 Home
-              </a>
-              <a
+              </NavLink>
+              <NavLink to='/home'
                 href=""
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                className="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300"
               >
                 Services
-              </a>
-              <a
+              </NavLink>
+              <NavLink to='/login'
                 href=""
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
               >
                 About
-              </a>
-              <a
+              </NavLink>
+              <NavLink to='/'
                 href=""
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
               >
                 Contact Us
-              </a>
+              </NavLink>
             </div>
           </div>
 
-          <div class="hidden md:flex items-center space-x-3 ">
-            <a
-              href=""
-              class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
+          <div className="hidden md:flex items-center space-x-3 ">
+            <NavLink to='/'
+              className="py-2 px-2 font-medium text-green-700 rounded hover:bg-green-500 hover:text-white transition duration-300"
             >
               Log In
-            </a>
-            <a
-              href=""
-              class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
+            </NavLink>
+            <NavLink to='/'
+              className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
             >
               Sign Up
-            </a>
+            </NavLink>
           </div>
           {/* <!-- Mobile menu button --> */}
-          <div class="md:hidden flex items-center">
-            <button onClick={()=>setActive(!active)} class="outline-none mobile-menu-button">
+          <div className="md:hidden flex items-center">
+            <button onClick={()=>setActive(!active)} className="outline-none mobile-menu-button">
             {!active &&  <svg
-                class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                className=" w-6 h-6 text-gray-500 hover:text-green-500 "
                 x-show="!showMenu"
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                strokeWidth="2"
+                stroke-width="2"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
@@ -81,50 +80,39 @@ const Navbar = () => {
         </div>
       </div>
       {/* <!-- mobile menu --> */}
-     { active && <div class="md:hidden mobile-menu">
-        <ul class="">
-          <li class="active">
-            <a
-              href="index.html"
-              class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
+     { active && <div className="md:hidden mobile-menu">
+        <ul className="">
+          <li className="active">
+            <NavLink to='/'
+              className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
             >
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#services"
-              class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+            <NavLink to='/'
+              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               Services
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#about"
-              class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+            <NavLink to='/'
+              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               About
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#contact"
-              class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+            <NavLink to='/login'
+              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
             >
               Contact Us
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>}
-      {/* <script>
-				const btn = document.querySelector("button.mobile-menu-button");
-				const menu = document.querySelector(".mobile-menu");
-
-				btn.addEventListener("click", () => {
-					menu.classList.toggle("hidden");
-				});
-			</script> */}
+  
     </nav>
   );
 };

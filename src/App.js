@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home/Home';
 import ToolDetails from './pages/Home/ToolDetails';
+import LoginPage from './pages/Login/LoginPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
      <Routes>
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='/home' element={<Home></Home>}></Route>
+       <Route path='/login' element={<LoginPage></LoginPage>}></Route>
        <Route path='/home/:toolId' element={<ToolDetails></ToolDetails>}></Route>
      </Routes>
      

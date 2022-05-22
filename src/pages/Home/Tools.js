@@ -16,7 +16,7 @@ const Tools = () => {
         className=" relative w-screen"
       >
           <h1 className="pt-5 text-[#002341] text-center text-5xl font-bold">Our Products</h1>
-        <div className="grid grid-cols-3 gap-5 px-40 py-10">
+        <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 lg:px-40 px-5 lg:py-10">
 
             {
                 tools.map(tool=><Tool key={tool._id} tool={tool}></Tool>)

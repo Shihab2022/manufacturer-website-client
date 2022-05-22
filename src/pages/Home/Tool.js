@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaShoppingBasket, FaStar } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Tool = ({ tool }) => {
   const { name, img, price ,_id} = tool;
@@ -11,7 +11,7 @@ const Tool = ({ tool }) => {
       <img src={img} className="h-[350px] rounded shadow-lg" alt="" />
       <p className="absolute top-3 left-2 text-xl font-semibold text-[#002341]">{name}</p>
       <div className="absolute top-72">
-      <div className="grid grid-cols-2 justify-between items-center px-5 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center px-5 ">
         <div>
           <p>{price}</p>
           <div className="flex text-yellow-500 mt-1">
