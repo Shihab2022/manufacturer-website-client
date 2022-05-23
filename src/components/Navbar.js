@@ -52,14 +52,12 @@ console.log(user)
           </div>
 
           <div className="hidden md:flex items-center space-x-3 ">
-         { user ?  <button onClick={ signOut(auth)} className='text-white text-2xl'>Log out</button> :  <NavLink to='/login'
+
+         { user ?  <button onClick={()=> signOut(auth)} className='text-white text-2xl'>Log out</button> :  <NavLink to='/login'
               className="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300">
               Log In
             </NavLink> }
-            <NavLink to='/login'
-              className="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300">
-              Log In
-            </NavLink>
+
           </div>
           {/* <!-- Mobile menu button --> */}
           <div className="md:hidden flex items-center">
@@ -108,11 +106,10 @@ console.log(user)
             </NavLink>
           </li>
           <li>
-            <NavLink to='/login'
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-            >
-              Contact Us
-            </NavLink>
+          { user ?  <button onClick={()=> signOut(auth)} className='block text-sm px-2 py-4 hover:bg-green-500 transition duration-300'>Log out</button> :  <NavLink to='/login'
+              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">
+              Log In
+            </NavLink> }
           </li>
         </ul>
       </div>}

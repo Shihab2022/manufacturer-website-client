@@ -8,12 +8,14 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../../components/Loading";
+
+
 const LoginPage = () => {
   const {register,formState: { errors },handleSubmit} = useForm();
   const navigate=useNavigate()
   const [signInWithGoogle, googleUser, googleLoading, googleError] =useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] =useSignInWithEmailAndPassword(auth);
-  
+
   const onSubmit = (data) => {
 signInWithEmailAndPassword(data.email, data.password);
   };
