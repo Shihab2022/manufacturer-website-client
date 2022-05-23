@@ -16,12 +16,12 @@ const Review = () => {
       className=" flex justify-center flex-col items-center w-screen"
     >
         <h1 className="lg:text-4xl text-2xl font-bold  text-amber-500 mt-14">OUR CUSTOMER REVIEWS</h1>
-      <div class="carousel w-full  lg:py-10">
+      <div className="carousel w-full  lg:py-10">
         {reviews.map((review, index) => (
-          <div id={`slide${index}`} class="carousel-item relative w-full">
+          <div id={`slide${index}`} className="carousel-item relative w-full">
             <div className="w-full flex text-white flex-col justify-center items-center">
-              <div class="avatar">
-                <div class="w-24 rounded-full">
+              <div className="avatar">
+                <div className="w-24 rounded-full">
                   {review?.img ? <img src={review?.img} alt="" /> : <p className="text-6xl font-bold text-white bg-amber-300 shadow-2xl w-full h-full flex items-center justify-center">{review?.name.slice(0,1)}</p>}
                 </div>
               </div>
@@ -35,11 +35,11 @@ const Review = () => {
             <FaStar />
             <FaStar />
           </div>
-              <div class="absolute px-1 text-xl lg:px-24 flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href={`#slide${index - 1}`} class="text-white">
+              <div className="absolute px-1 text-xl lg:px-24 flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href={`#slide${index - 1}`} className="text-white">
                   ❮
                 </a>
-                <a href={`#slide${index + 2}`} class="text-white">
+                <a href={`#slide${index + 2}`} className="text-white">
                   ❯
                 </a>
               </div>

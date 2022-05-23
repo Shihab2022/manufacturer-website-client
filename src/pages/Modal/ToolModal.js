@@ -7,12 +7,12 @@ const ToolModal = ({tool}) => {
     return (
         <div>
 
-      {/* <label for="tool-modal"  class="btn modal-button">open modal</label> */}
+      {/* <label for="tool-modal"  className="btn modal-button">open modal</label> */}
 {/* <!-- Put this part before </body> tag --> */}
-<input type="checkbox" id="tool-modal" class="modal-toggle" />
-<div class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-  <label for="tool-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+<input type="checkbox" id="tool-modal" className="modal-toggle" />
+<div className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+  <label for="tool-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
   <form onSubmit={handleSubmit(onSubmit)}>
       <input className='input input-bordered input-info w-full max-w-xs' {...register("name", { required: true })} /> <br />
       {errors.name?.type === 'required' && "Name is required"} <br />

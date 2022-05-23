@@ -27,7 +27,7 @@ const ToolDetails = () => {
                 <h2 className='text-sm text-zinc-400'>{about}</h2>
                 <h2 className='text-2xl my-3'>  <span className='font-semibold text-amber-600'>{price}</span></h2>
                 <label  for="tool-modal"  className='btn bg-[#002341] px-10'>Order</label>
-                {/* <label for="tool-modal"  class="btn modal-button">open modal</label> */}
+                {/* <label for="tool-modal"  className="btn modal-button">open modal</label> */}
             </div>
             <ToolModal></ToolModal>
         </div>

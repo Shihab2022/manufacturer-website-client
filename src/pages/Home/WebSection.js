@@ -6,8 +6,8 @@ import browser from '../../assets/icon/browser.png'
 const WebSection = () => {
     // min-h-screen 
     return (
-        <div class="hero py-14 bg-base-500">
-  <div class="hero-content flex-col lg:px-10 lg:flex-row-reverse">
+        <div className="hero py-14 bg-base-500">
+  <div className="hero-content flex-col lg:px-10 lg:flex-row-reverse">
     <img src={web} alt='' />
     <div>
 

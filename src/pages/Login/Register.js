@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import bgProducts from '../../assets/img/bgProducts.jpg'
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import useToken from "../hooks/useToken";
 import Loading from "../../components/Loading";
@@ -9,7 +10,8 @@ import auth from "../../firebase.init";
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-    const [createUserWithEmailAndPassword,user,loading, error,] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+    const [createUserWithEmailAndPassword,user,loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    // const [createUserWithEmailAndPassword,user,loading, error,] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     // const [token]=useToken(user || googleUser)
     const navigate=useNavigate()
@@ -24,6 +26,7 @@ const Register = () => {
     userError=<p className="text-sm text-red-500 mb-2">{error?.message || googleError?.message ||updateError?.message}</p>
       console.log(error)
   }
+  console.log(user,googleUser)
     const onSubmit = async (data) => {
 
         await createUserWithEmailAndPassword(data.email,data.password);
@@ -35,10 +38,10 @@ const Register = () => {
     //   navigate(from, { replace: true });
     // }
     return (
-        <div className="flex justify-center h-screen items-center">
-        <div className="card shadow-2xl w-4/12 ">
+        <div style={{ backgroundImage: `url(${bgProducts})` }} className="flex justify-center h-screen items-center">
+        <div className="card shadow-2xl shadow-blue-500 w-4/12 ">
   <div className="card-body ">
-   <h1 className="text-3xl font-bold text-center uppercase text-secondary">Register </h1>
+   <h1 className="text-3xl font-bold text-center uppercase text-[#002341]">Register </h1>
   <form onSubmit={handleSubmit(onSubmit)}>
   <label className="label">
           <span className="label-text">Name</span>
@@ -121,7 +124,7 @@ const Register = () => {
         </label>
 {userError}
     
-        <input className="btn btn-accent text-center w-full" type="submit" value="Register" />
+        <input className="btn  bg-[#002341] text-center w-full" type="submit" value="Register" />
       </form>
 
       <div className="divider">OR</div>

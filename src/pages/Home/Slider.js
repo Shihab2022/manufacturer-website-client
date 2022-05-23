@@ -5,7 +5,9 @@ import bg1 from "../../assets/img/bg1.jpg";
 import image1 from "../../assets/img/image1.jpg";
 import image2 from "../../assets/img/image2.jpg";
 import image3 from "../../assets/img/image3.jpg";
+
 const Slider = () => {
+  
   return (
     <>
       <div
@@ -40,9 +42,10 @@ const Slider = () => {
               <img className=" lg:h-[250px]" src={image3} alt="" />
             </div>
           </div>
-          <h1 className="text-white font-bold mt-10 text-5xl">Shop by Category</h1>
+          <h1 className="text-white font-bold mt-10 text-5xl">
+            Shop by Category
+          </h1>
         </div>
-       
       </div>
     </>
   );

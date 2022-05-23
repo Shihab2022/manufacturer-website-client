@@ -1,10 +1,21 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {  signOut } from 'firebase/auth';
 import { FaTimes } from "react-icons/fa";
 import {  NavLink } from "react-router-dom";
 import logo from '../assets/icon/logo.png'
+import auth from "../firebase.init";
+import Loading from "./Loading";
+
 const Navbar = () => {
+  const [user,loading] = useAuthState(auth);
     const [active,setActive]=useState(false)
-    // console.log(active)
+ if(loading){
+   return <Loading></Loading>
+ }
+  
+console.log(user)
+
   return (
     <nav className="bg-[#002341] text-white shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
@@ -36,25 +47,18 @@ const Navbar = () => {
               >
                 About
               </NavLink>
-              <NavLink to='/'
-                href=""
-                className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
-              >
-                Contact Us
-              </NavLink>
+            
             </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-3 ">
-            <NavLink to='/login'
-              className="py-2 px-2 font-medium text-green-700 rounded hover:bg-green-500 hover:text-white transition duration-300"
-            >
+         { user ?  <button onClick={ signOut(auth)} className='text-white text-2xl'>Log out</button> :  <NavLink to='/login'
+              className="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300">
               Log In
-            </NavLink>
-            <NavLink to='/'
-              className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
-            >
-              Sign Up
+            </NavLink> }
+            <NavLink to='/login'
+              className="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300">
+              Log In
             </NavLink>
           </div>
           {/* <!-- Mobile menu button --> */}
@@ -64,9 +68,9 @@ const Navbar = () => {
                 className=" w-6 h-6 text-gray-500 hover:text-green-500 "
                 x-show="!showMenu"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
