@@ -23,7 +23,7 @@ useEffect(()=>{
 },[quantity])
 
 const handelSubmit=e=>{
-  const userInfo={
+  const userOrder={
     name:e.target.name.value,
     email:e.target.email.value,
     address:e.target.address.value,
@@ -31,7 +31,20 @@ const handelSubmit=e=>{
     quantity:e.target.quantity.value
   }
 
-console.log(userInfo)
+  fetch('http://localhost:5000/order', {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userOrder),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  })
+
+
+// console.log(userInfo)
 e.preventDefault();
 }
 
