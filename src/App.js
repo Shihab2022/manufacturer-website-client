@@ -7,6 +7,10 @@ import Home from './pages/Home/Home';
 import ToolDetails from './pages/Home/ToolDetails';
 import LoginPage from './pages/Login/LoginPage';
 import Register from './pages/Login/Register';
+import Payment from './pages/Payment/Payment';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import GetReview from './pages/Review/GetReview';
 
 function App() {
   return (
@@ -17,10 +21,12 @@ function App() {
        <Route path='/home' element={<Home></Home>}></Route>
        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
        <Route path='/register' element={<Register></Register>}></Route>
+       <Route path='/payment' element={<Payment></Payment>}></Route>
+       <Route path='/getReview' element={<GetReview></GetReview>}></Route>
        <Route path='/home/:toolId' element={<ToolDetails></ToolDetails>}></Route>
        <Route path='*' element={<NotFound></NotFound>}></Route>
      </Routes>
-     
+     <ToastContainer />
      <Footer></Footer>
     </div>
   );

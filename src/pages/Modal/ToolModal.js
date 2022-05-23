@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 // import { useForm } from "react-hook-form";
 
 const ToolModal = ({tool}) => {
   const [user]=useAuthState(auth)
-  const {aviQuantity,miniQuantity}=tool
+  const {aviQuantity,price,miniQuantity}=tool
 const [quantity,setQuantity]=useState('')
 const [userError,setUserError]=useState('')
-
+const navigate=useNavigate()
 
 useEffect(()=>{
   if(parseInt(quantity) < parseInt(miniQuantity)){
@@ -21,7 +23,7 @@ useEffect(()=>{
     setUserError('')
   }
 },[quantity])
-
+// console.log(parseInt(quantity) * parseInt(price))
 const handelSubmit=e=>{
   const userOrder={
     name:e.target.name.value,
@@ -40,6 +42,8 @@ const handelSubmit=e=>{
   })
   .then(response => response.json())
   .then(data => {
+    navigate('/payment')
+    toast.success(`Please payment ${parseInt(quantity) * parseInt(price)}`)
     console.log('Success:', data);
   })
 
@@ -48,8 +52,6 @@ const handelSubmit=e=>{
 e.preventDefault();
 }
 
-// console.log(quantity,miniQuantity,aviQuantity)
-  // console.log(user)
     return (
         <div>
 <input type="checkbox" id="tool-modal" className="modal-toggle" />
