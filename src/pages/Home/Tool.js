@@ -22,7 +22,7 @@ const Tool = ({ tool }) => {
             <FaStar />
           </div>
         </div>
-        <Link to={`/home/${_id}`}  className="ml-20  border-zinc-400 hover:text-white hover:bg-amber-600 text-zinc-600 rounded-full p-2 border-2 text-3xl">
+        <Link to={`/home/${_id}`}  className="ml-24  border-zinc-400 hover:text-white hover:bg-amber-600 text-zinc-600 rounded-full p-2 border-2 text-3xl">
           <FaShoppingBasket />
         </Link>
       </div>

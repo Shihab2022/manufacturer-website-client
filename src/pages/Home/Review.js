@@ -6,7 +6,7 @@ import {  RiDoubleQuotesL ,RiDoubleQuotesR} from "react-icons/ri";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("fakeData.json")
+    fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -25,10 +25,10 @@ const Review = () => {
                   {review?.img ? <img src={review?.img} alt="" /> : <p className="text-6xl font-bold text-white bg-amber-300 shadow-2xl w-full h-full flex items-center justify-center">{review?.name.slice(0,1)}</p>}
                 </div>
               </div>
-              <p className="lg:w-1/2 w-3/4 mt-3 font-semibold"><span className="text-2xl text-amber-500 "><RiDoubleQuotesL /></span> {review.about}
-              <span className="text-2xl text-amber-500 "><RiDoubleQuotesR /></span></p>
+              <p className="lg:w-1/2 w-3/4 mt-3 font-semibold inline-block"><span className="text-2xl text-amber-500 inline-block mr-2"><RiDoubleQuotesL /></span> {review.about}
+              <span className="text-2xl text-amber-500 inline-block ml-2"><RiDoubleQuotesR /></span></p>
               <h4 className="text-2xl font-bold mt-8 text-white ">{review?.name}</h4>
-              <div className="flex text-yellow-500 mt-1">
+              <div className="flex text-yellow-500 justify-around mt-1">
             <FaStar />
             <FaStar />
             <FaStar />
