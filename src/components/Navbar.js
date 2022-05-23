@@ -28,24 +28,30 @@ console.log(user)
               </NavLink>
             </div>
 
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden uppercase md:flex items-center space-x-1">
               <NavLink to='/'
-                href=""
+                
                 className="py-4 px-2 text-white   font-semibold "
               >
                 Home
               </NavLink>
               <NavLink to='/home'
-                href=""
+               
                 className="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300"
               >
                 Services
               </NavLink>
               <NavLink to='/login'
-                href=""
+               
                 className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
               >
                 About
+              </NavLink>
+              <NavLink to='/dashboard/myProfile'
+                
+                className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
+              >
+                Dashboard
               </NavLink>
             
             </div>
@@ -53,8 +59,8 @@ console.log(user)
 
           <div className="hidden md:flex items-center space-x-3 ">
 
-         { user ?  <button onClick={()=> signOut(auth)} className='text-white text-2xl'>Log out</button> :  <NavLink to='/login'
-              className="py-2 px-2 font-medium text-white rounded hover:bg-green-500 hover:text-white transition duration-300">
+         { user ?  <button onClick={()=> signOut(auth)} className='text-white text-2xl uppercase '>Log out</button> :  <NavLink to='/login'
+              className="py-2 px-2  font-semibold text-white rounded hover:bg-green-500 hover:text-white uppercase  transition duration-300">
               Log In
             </NavLink> }
 

@@ -11,6 +11,10 @@ import Payment from './pages/Payment/Payment';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GetReview from './pages/Review/GetReview';
+import Dashboard from './pages/Dashboard/Dashboard';
+import MyProfile from './pages/Dashboard/MyProfile';
+import MyOrders from './pages/Dashboard/MyOrders';
+import AddReview from './pages/Dashboard/AddReview';
 
 function App() {
   return (
@@ -22,6 +26,12 @@ function App() {
        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
        <Route path='/register' element={<Register></Register>}></Route>
        <Route path='/payment' element={<Payment></Payment>}></Route>
+       <Route path='dashboard' element={<Dashboard/>}>
+              <Route path='myProfile' element={<MyProfile/>}></Route>
+              <Route path='myOrders' element={<MyOrders/>}></Route>
+              <Route path='addReview' element={<AddReview/>}></Route>
+
+       </Route>
        <Route path='/getReview' element={<GetReview></GetReview>}></Route>
        <Route path='/home/:toolId' element={<ToolDetails></ToolDetails>}></Route>
        <Route path='*' element={<NotFound></NotFound>}></Route>
