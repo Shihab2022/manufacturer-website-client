@@ -6,6 +6,7 @@ import NotFound from './components/NotFound';
 import Home from './pages/Home/Home';
 import ToolDetails from './pages/Home/ToolDetails';
 import LoginPage from './pages/Login/LoginPage';
+import Register from './pages/Login/Register';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='/home' element={<Home></Home>}></Route>
        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
+       <Route path='/register' element={<Register></Register>}></Route>
        <Route path='/home/:toolId' element={<ToolDetails></ToolDetails>}></Route>
        <Route path='*' element={<NotFound></NotFound>}></Route>
      </Routes>

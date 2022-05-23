@@ -46,7 +46,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-3 ">
-            <NavLink to='/'
+            <NavLink to='/login'
               className="py-2 px-2 font-medium text-green-700 rounded hover:bg-green-500 hover:text-white transition duration-300"
             >
               Log In
