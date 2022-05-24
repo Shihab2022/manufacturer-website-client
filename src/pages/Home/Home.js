@@ -11,8 +11,9 @@ const Home = () => {
             <Slider></Slider>
             <Tools></Tools>
             <WebSection></WebSection>
-            <Summary></Summary>
+          
             <Review></Review>
+            <Summary></Summary>
         </div>
     );
 };

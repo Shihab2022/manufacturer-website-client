@@ -11,8 +11,8 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const Swal = require('sweetalert2')
   useEffect(() => {
-    const url = `https://frozen-badlands-14934.herokuapp.com/order/${user?.email}`;
-    // const url = `http://localhost:5000/order/${user?.email}`;
+    // const url = `https://frozen-badlands-14934.herokuapp.com/order/${user?.email}`;
+    const url = `http://localhost:5000/order/${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
@@ -28,8 +28,8 @@ const handleDelete=(_id,name)=>{
     confirmButtonText: 'Yes, delete it!'
   }).then((result) => {
     if (result.isConfirmed) {
-      // const url = `http://localhost:5000/order/${_id}`;
-      const url = `https://frozen-badlands-14934.herokuapp.com/order/${_id}`;
+      const url = `http://localhost:5000/order/${_id}`;
+      // const url = `https://frozen-badlands-14934.herokuapp.com/order/${_id}`;
   fetch(url,{
     method: 'DELETE',
   })

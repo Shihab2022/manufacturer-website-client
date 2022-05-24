@@ -28,8 +28,6 @@ const auth = getAuth(app);
 export default auth;
 
 
-
-
 // apiKey: process.env.REACT_APP_apiKey,
 // authDomain: process.env.REACT_APP_authDomain,
 // projectId: process.env.REACT_APP_projectId,

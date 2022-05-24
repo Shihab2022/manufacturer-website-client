@@ -14,7 +14,7 @@ const Navbar = () => {
    return <Loading></Loading>
  }
   
-console.log(user)
+// console.log(user)
 
   return (
     <nav className="bg-[#002341] text-white shadow-lg">
@@ -59,7 +59,10 @@ console.log(user)
 
           <div className="hidden md:flex items-center space-x-3 ">
 
-         { user ?  <button onClick={()=> signOut(auth)} className='text-white text-2xl uppercase '>Log out</button> :  <NavLink to='/login'
+         { user ?  <button onClick={()=> {
+           signOut(auth)
+           localStorage.removeItem('accessToken')
+          }} className='text-white text-2xl uppercase '>Log out</button> :  <NavLink to='/login'
               className="py-2 px-2  font-semibold text-white rounded hover:bg-green-500 hover:text-white uppercase  transition duration-300">
               Log In
             </NavLink> }

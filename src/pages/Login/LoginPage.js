@@ -8,7 +8,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../../components/Loading";
-
+import useToken from "../../hooks/useToken";
 
 const LoginPage = () => {
   const {register,formState: { errors },handleSubmit} = useForm();
@@ -19,7 +19,7 @@ const LoginPage = () => {
   const onSubmit = (data) => {
 signInWithEmailAndPassword(data.email, data.password);
   };
-
+  const [token]=useToken(user ||googleUser)
   if (loading || googleLoading) {
     return <Loading></Loading>;
   }

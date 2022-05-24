@@ -6,8 +6,8 @@ const ToolDetails = () => {
     // console.log(toolId)
     const [tool,setTool]=useState({})
     useEffect(()=>{
-        const url=`https://frozen-badlands-14934.herokuapp.com/tools/${toolId}`
-        // const url=`http://localhost:5000/tools/${toolId}`
+        // const url=`https://frozen-badlands-14934.herokuapp.com/tools/${toolId}`
+        const url=`http://localhost:5000/tools/${toolId}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setTool(data))
