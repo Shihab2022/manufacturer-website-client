@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import bgProducts from "../../assets/img/bgProducts.jpg";
 import {
   useSignInWithEmailAndPassword,
@@ -13,13 +13,20 @@ import useToken from "../../hooks/useToken";
 const LoginPage = () => {
   const {register,formState: { errors },handleSubmit} = useForm();
   const navigate=useNavigate()
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const [signInWithGoogle, googleUser, googleLoading, googleError] =useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] =useSignInWithEmailAndPassword(auth);
-
+  const [token]=useToken(user ||googleUser)
+  useEffect(()=>{
+    if(token){
+      navigate(from, { replace: true });
+    }
+  },[token,from,navigate])
   const onSubmit = (data) => {
 signInWithEmailAndPassword(data.email, data.password);
   };
-  const [token]=useToken(user ||googleUser)
+
   if (loading || googleLoading) {
     return <Loading></Loading>;
   }
@@ -28,9 +35,7 @@ signInWithEmailAndPassword(data.email, data.password);
     console.log("ok");
   };
 
-  if(user || googleUser){
-    navigate('/')
-  }
+  
 
   let userError;
   if (error || googleError) {
@@ -39,7 +44,7 @@ signInWithEmailAndPassword(data.email, data.password);
         {error?.message || googleError?.message}
       </p>
     );
-    console.log(error);
+    // console.log(error);
   }
 
   return (

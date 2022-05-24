@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import bgProducts from '../../assets/img/bgProducts.jpg'
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import useToken from "../hooks/useToken";
 import Loading from "../../components/Loading";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -13,7 +13,7 @@ const Register = () => {
     const [createUserWithEmailAndPassword,user,loading, error,] = useCreateUserWithEmailAndPassword(auth);
     // const [createUserWithEmailAndPassword,user,loading, error,] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-    // const [token]=useToken(user || googleUser)
+    const [token]=useToken(user || googleUser)
     const navigate=useNavigate()
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -31,12 +31,12 @@ const Register = () => {
 
         await createUserWithEmailAndPassword(data.email,data.password);
         await updateProfile({ displayName : data.name });
-        // navigate('/')
-        navigate(from, { replace: true });
+        navigate('/')
+    
     };
-    // if(token){
-    //   navigate(from, { replace: true });
-    // }
+    if(token){
+      navigate(from, { replace: true });
+    }
     return (
         <div style={{ backgroundImage: `url(${bgProducts})` }} className="flex justify-center h-screen items-center">
         <div className="card shadow-2xl shadow-blue-500 w-4/12 ">

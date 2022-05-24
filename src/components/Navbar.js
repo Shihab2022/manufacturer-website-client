@@ -47,12 +47,9 @@ const Navbar = () => {
               >
                 About
               </NavLink>
-              <NavLink to='/dashboard/myProfile'
-                
-                className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
-              >
+             {user && <NavLink to='/dashboard/myProfile' className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300">
                 Dashboard
-              </NavLink>
+              </NavLink>}
             
             </div>
           </div>

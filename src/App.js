@@ -15,6 +15,11 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MyProfile from './pages/Dashboard/MyProfile';
 import MyOrders from './pages/Dashboard/MyOrders';
 import AddReview from './pages/Dashboard/AddReview';
+import RequireAuth from './components/RequareAuth';
+import AllOrders from './pages/Dashboard/AllOrders';
+import AddProduct from './pages/Dashboard/AddProduct';
+import MakeAdmin from './pages/Dashboard/MakeAdmin';
+import ManageProducts from './pages/Dashboard/ManageProducts';
 
 function App() {
   return (
@@ -26,14 +31,19 @@ function App() {
        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
        <Route path='/register' element={<Register></Register>}></Route>
        <Route path='/payment' element={<Payment></Payment>}></Route>
-       <Route path='dashboard' element={<Dashboard/>}>
+       
+       <Route path='dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
               <Route path='myProfile' element={<MyProfile/>}></Route>
               <Route path='myOrders' element={<MyOrders/>}></Route>
               <Route path='addReview' element={<AddReview/>}></Route>
+              <Route path='allOrders' element={<AllOrders/>}></Route>
+              <Route path='addProduct' element={<AddProduct/>}></Route>
+              <Route path='makeAdmin' element={<MakeAdmin/>}></Route>
+              <Route path='manageProducts' element={<ManageProducts/>}></Route>
 
        </Route>
        <Route path='/getReview' element={<GetReview></GetReview>}></Route>
-       <Route path='/home/:toolId' element={<ToolDetails></ToolDetails>}></Route>
+       <Route path='/home/:toolId' element={<RequireAuth><ToolDetails/></RequireAuth>}></Route>
        <Route path='*' element={<NotFound></NotFound>}></Route>
      </Routes>
      <ToastContainer />
