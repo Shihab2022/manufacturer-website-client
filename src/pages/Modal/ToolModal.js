@@ -36,7 +36,8 @@ const handelSubmit=e=>{
     quantity:e.target.quantity.value
   }
 
-  fetch('http://localhost:5000/order', {
+  fetch('https://frozen-badlands-14934.herokuapp.com/order', {
+  // fetch('http://localhost:5000/order', {
     method: 'POST', // or 'PUT'
     headers: {
       'Content-Type': 'application/json',
