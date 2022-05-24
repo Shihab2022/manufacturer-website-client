@@ -10,7 +10,7 @@ const Review = () => {
     fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
-  }, []);
+  }, [reviews]);
   return (
     <div
       style={{ backgroundImage: `url(${parralex})` }}

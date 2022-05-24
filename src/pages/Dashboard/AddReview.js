@@ -1,9 +1,10 @@
 import React from 'react';
+import GetReview from '../Review/GetReview';
 
 const AddReview = () => {
     return (
         <div>
-            <h1>this is review page .</h1>
+            <GetReview></GetReview>
         </div>
     );
 };

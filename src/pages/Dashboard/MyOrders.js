@@ -54,9 +54,9 @@ const handle=()=>{
 }
     return (
         <div className='px-20 pt-10'>
-         <div class="overflow-x-auto">
+         <div className="overflow-x-auto">
          <h1 className='text-center mb-5 text-3xl font-bold  uppercase'><span className='text-amber-400'>{user?.displayName}</span> your order</h1>
-  <table class="table w-full">
+  <table className="table w-full">
   
     {/* <!-- head --> */}
     <thead>

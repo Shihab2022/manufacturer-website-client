@@ -1,19 +1,43 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import parralex from '../../assets/img/parralex.jpg'
 import auth from '../../firebase.init';
 const GetReview = () => {
   const [user]=useAuthState(auth)
+  const handleReview=e=>{
+    const review={
+      email:e.target.email.value,
+      name:e.target.name.value,
+      ratting:e.target.ratting.value,
+      about:e.target.textArea.value
+    }
+      // fetch('https://frozen-badlands-14934.herokuapp.com/review', {
+  fetch('http://localhost:5000/review', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(review),
+  })
+  .then(response => response.json())
+  .then(data => {
+    toast.success('Thank you for getting review .')
+    // console.log('Success:', data);
+  })
+    e.preventDefault();
+    console.log(review)
+  }
     return (
-        <div style={{ backgroundImage: `url(${parralex})` }} className='h-[80vh] flex justify-center items-center'>
-          <div class="card w-96 bg-base-100 shadow-2xl">
-  <div class="card-body">
-  <form action="">
-  <input type="text"  name='name' value={user?.displayName} disabled class="input input-bordered w-full max-w-xs" />
-    <input type="text" name='email' value={user?.email} disabled class="input my-5 input-bordered w-full max-w-xs" />
-    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-    <textarea class="textarea textarea-bordered w-full max-w-xs mt-5" placeholder="Write some text here .. "></textarea>
-    <input type="submit" placeholder="Type here" class="input text-white text-xl mt-3 bg-[#002341] input-bordered w-full max-w-xs" />
+        <div style={{ backgroundImage: `url(${parralex})` }} className='h-screen flex justify-center items-center'>
+          <div className="card w-96 bg-base-100 shadow-2xl">
+  <div className="card-body">
+  <form onSubmit={handleReview}>
+  <input type="text"  name='name' value={user?.displayName} disabled className="input input-bordered w-full max-w-xs" />
+    <input type="text" name='email' value={user?.email} disabled className="input my-5 input-bordered w-full max-w-xs" />
+    <input type="number" name='ratting'  placeholder="Ratting here" className="input input-bordered w-full max-w-xs" />
+    <textarea name='textArea' className="textarea textarea-bordered w-full max-w-xs mt-5" placeholder="Write some text here .. "></textarea>
+    <input type="submit"  placeholder="Type here" className="input text-white text-xl mt-3 bg-[#002341] input-bordered w-full max-w-xs" />
   </form>
   
   </div>

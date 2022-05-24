@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import Loading from "../../components/Loading";
 import auth from "../../firebase.init";
 
 const MyProfile = () => {
   const [users, setUsers] = useState({});
   const [user] = useAuthState(auth);
+  const [loading,setLoading]=useState(null)
+  
   useEffect(() => {
     fetch(`http://localhost:5000/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [user,users]);
-//   console.log(users[0]?.email);
-//   console.log(user);
-const updateProfile=e=>{
+  if(loading){
+    return <Loading></Loading>
+}
 
+const updateProfile=e=>{
+    setLoading(true)
     e.preventDefault();
     //upload image in imagebb
     const imgStorageKey = "d92a7867dc5f803eaff37ac866069fb5";
@@ -52,25 +57,30 @@ const updateProfile=e=>{
                     if(data.acknowledged){
                         toast.success(`${updateInfo.name} your profile updated .`)
                         setUsers(updateInfo)
-                        console.log(users)
+                        setLoading(false)
+                        e.reset(); 
                     }
                 })
+            }
+            else{
+                setLoading(false)
+                toast.error('Please give your photo .')
             }
         })
 }
 
   return (
     <div>
-      <div class="hero py-5  lg:py-20">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <div class="text-center block w-[600px] lg:text-left">
+      <div className="hero py-5  lg:py-20">
+        <div className="hero-content flex-col lg:flex-row-reverse">
+          <div className="text-center block w-[600px] lg:text-left">
         
             <div className="lg:pl-10 flex justify-center w-full items-center flex-col">
             <h2 className="text-2xl lg:text-4xl font-bold mb-8 lg:mb-16 uppercase text-cyan-600">Your Profile </h2>
               {/* {user?.img ? ( */}
               {users[0]?.img ? (
-                  <div class="avatar">
-                  <div class="w-32 rounded-full">
+                  <div className="avatar">
+                  <div className="w-32 rounded-full">
                   <img src={users[0]?.img} alt="" />
                   </div>
                 </div>
@@ -83,66 +93,68 @@ const updateProfile=e=>{
               <p className="text-3xl font-bold mt-5 text-amber-600">
                 {user?.displayName}
               </p>
-              <p class="py-2 text-xl">Email : {users[0]?.email}</p>
-              <p class="py-3 text-xl">Social : {users[0]?.link}</p>
-              <p class=" text-xl">Phone : {users[0]?.number}</p>
+              <p className="py-2 text-xl">Email : {users[0]?.email}</p>
+              <p className="py-3 text-xl">Social : {users[0]?.link}</p>
+              <p className=" text-xl">Phone : {users[0]?.number}</p>
              
             </div>
           </div>
-          <div class="card flex-shrink-0 w-full max-w-sm ">
-            <div class="card-body">
+          <div className="card flex-shrink-0 w-full max-w-sm ">
+            <div className="card-body">
             <h2 className=" text-2xl lg:text-4xl font-bold mb-16 text-center text-cyan-600 uppercase">update your Profile </h2>
             <form onSubmit={updateProfile}>
 
-            <div class="form-control mb-2">
+            <div className="form-control mb-2">
                 <input
                   type="text"
                  value={users[0]?.email}
                  name='email'
                  disabled
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control mb-2">
+              <div className="form-control mb-2">
               
                 <input
                   type="text"
                   value={user?.displayName}
                   name='name'
                   disabled
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control mb-2">
+              <div className="form-control mb-2">
               
                 <input
                   type="text"
                   name='link'
+                  required
                   placeholder="Enter your social link"
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control mb-2">
+              <div className="form-control mb-2">
               
                 <input
                   type="number"
                   name='number'
+                  required
                   placeholder="Enter your phone number"
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               </div>
-              <div class="form-control mb-2 ">
+              <div className="form-control mb-2 ">
                 
                 <input
                   type="file"
                   name='photo'
                   placeholder="Profile Photo"
-                  class="input input-bordered"
+                  className="input input-bordered"
                 />
               
               </div>
-              <div class="form-control mt-6">
-                <button class="btn btn-primary">Update profile</button>
+              <div className="form-control mt-6">
+                <button className="btn btn-primary">Update profile</button>
               </div>
             </form>
               
