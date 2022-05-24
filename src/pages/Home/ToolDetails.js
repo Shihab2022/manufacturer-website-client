@@ -14,6 +14,7 @@ const ToolDetails = () => {
     },[toolId])
  
     const { name, img, price ,about,aviQuantity,miniQuantity} = tool;
+  
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 px-5 py-5 lg:px-32 justify-center items-center'>
             <div>

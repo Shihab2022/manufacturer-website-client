@@ -7,7 +7,7 @@ import auth from '../../firebase.init';
 
 const ToolModal = ({tool}) => {
   const [user]=useAuthState(auth)
-  const {aviQuantity,price,miniQuantity}=tool
+  const {aviQuantity,name,price,miniQuantity}=tool
 const [quantity,setQuantity]=useState('')
 const [userError,setUserError]=useState('')
 const navigate=useNavigate()
@@ -23,13 +23,16 @@ useEffect(()=>{
     setUserError('')
   }
 },[quantity])
-// console.log(parseInt(quantity) * parseInt(price))
+
+const pay=`${parseInt(quantity) * parseInt(price)}`
 const handelSubmit=e=>{
   const userOrder={
     name:e.target.name.value,
     email:e.target.email.value,
     address:e.target.address.value,
     phone:e.target.number.value,
+    product:name,
+    cost:pay,
     quantity:e.target.quantity.value
   }
 
@@ -43,15 +46,16 @@ const handelSubmit=e=>{
   .then(response => response.json())
   .then(data => {
     navigate('/payment')
-    toast.success(`Please payment ${parseInt(quantity) * parseInt(price)}`)
-    console.log('Success:', data);
+
+    toast.success(`Please payment $ ${pay}`)
+    // console.log('Success:', data);
   })
 
 
 // console.log(userInfo)
 e.preventDefault();
 }
-
+// console.log(`${parseFloat(quantity)*parseFloat(price)}`)
     return (
         <div>
 <input type="checkbox" id="tool-modal" className="modal-toggle" />
