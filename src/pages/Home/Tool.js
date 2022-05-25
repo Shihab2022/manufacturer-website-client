@@ -8,7 +8,7 @@ const Tool = ({ tool }) => {
 //   const navigate=useNavigate()
   return (
     <div className="relative">
-      <img src={img} className="h-[350px] rounded shadow-lg" alt="" />
+      <img src={img} className="h-[350px] w-[340px] rounded shadow-lg" alt="" />
       <p className="absolute top-3 left-2 text-xl font-semibold text-[#002341]">{name}</p>
       <div className="absolute top-72">
       <div className="grid grid-cols-2 justify-between items-center px-5 ">
