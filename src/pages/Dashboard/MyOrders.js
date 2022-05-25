@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
@@ -85,9 +86,9 @@ const MyOrders = () => {
                   </button>
                 </td>
                 <td>
-                  <button  className="btn btn-xs bg-amber-700">
+                  <Link to={`/dashboard/payment/${order?._id}`}  className="btn btn-xs bg-amber-700">
                     payment
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}

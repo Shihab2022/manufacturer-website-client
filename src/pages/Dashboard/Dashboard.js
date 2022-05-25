@@ -1,8 +1,13 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink, Outlet } from "react-router-dom";
+import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
+  console.log(admin);
   return (
     <div>
       <div className="drawer drawer-mobile">
@@ -25,28 +30,36 @@ const Dashboard = () => {
             <li>
               <NavLink to="/dashboard/myProfile">My Profile</NavLink>
             </li>
-            <li>
-              <NavLink to="/dashboard/myOrders">My Orders</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/addReview">Add Review</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/allOrders">All Orders</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/addProduct">Add Product</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/makeAdmin">Make Admin</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard/manageProducts">Manage Products</NavLink>
-            </li>
+           { !admin&& <>
+              <li>
+                <NavLink to="/dashboard/myOrders">My Orders</NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/addReview">Add Review</NavLink>
+              </li>
+            </>}
+
+            {admin && (
+              <>
+                <li>
+                  <NavLink to="/dashboard/allOrders">All Orders</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/addProduct">Add Product</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/makeAdmin">Make Admin</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/manageProducts">
+                    Manage Products
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
-      
     </div>
   );
 };

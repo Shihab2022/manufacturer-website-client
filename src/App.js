@@ -7,7 +7,6 @@ import Home from './pages/Home/Home';
 import ToolDetails from './pages/Home/ToolDetails';
 import LoginPage from './pages/Login/LoginPage';
 import Register from './pages/Login/Register';
-import Payment from './pages/Payment/Payment';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GetReview from './pages/Review/GetReview';
@@ -20,6 +19,8 @@ import AllOrders from './pages/Dashboard/AllOrders';
 import AddProduct from './pages/Dashboard/AddProduct';
 import MakeAdmin from './pages/Dashboard/MakeAdmin';
 import ManageProducts from './pages/Dashboard/ManageProducts';
+import Blog from './Blog/Blog';
+import Payment from './pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -30,8 +31,7 @@ function App() {
        <Route path='/home' element={<Home></Home>}></Route>
        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
        <Route path='/register' element={<Register></Register>}></Route>
-       <Route path='/payment' element={<Payment></Payment>}></Route>
-       
+       <Route path='/blog' element={<Blog></Blog>}></Route>
        <Route path='dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
               <Route path='myProfile' element={<MyProfile/>}></Route>
               <Route path='myOrders' element={<MyOrders/>}></Route>
@@ -39,6 +39,7 @@ function App() {
               <Route path='allOrders' element={<AllOrders/>}></Route>
               <Route path='addProduct' element={<AddProduct/>}></Route>
               <Route path='makeAdmin' element={<MakeAdmin/>}></Route>
+              <Route path='payment/:orderId' element={<Payment/>}></Route>
               <Route path='manageProducts' element={<ManageProducts/>}></Route>
 
        </Route>

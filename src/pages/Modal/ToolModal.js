@@ -96,7 +96,7 @@ e.preventDefault();
           <label className="label">
             <span className="label-text">Quantity</span>
           </label>
-          <input type="number" name='quantity' onFocus={(e)=>e.target.value=null} value='213' required onBlur={e=>setQuantity(e.target.value)} placeholder="Product Quantity" className="input input-bordered" />
+          <input type="number" name='quantity'  required onBlur={e=>setQuantity(e.target.value)} placeholder="Product Quantity" className="input input-bordered" />
           {userError && <p className='text-sm text-red-500'>{userError}</p>}
         </div>
         <div className="form-control mt-6">
@@ -120,3 +120,5 @@ e.preventDefault();
 };
 
 export default ToolModal;
+
+// onFocus={(e)=>e.target.value=null} value='213'
