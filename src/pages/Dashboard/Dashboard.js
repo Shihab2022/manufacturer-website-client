@@ -23,9 +23,9 @@ const Dashboard = () => {
             Open drawer
           </label>
         </div>
-        <div className="drawer-side">
-          <label for="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 ">
+        <div className="drawer-side ">
+          <label for="my-drawer-2" className="drawer-overlay "></label>
+          <ul className="menu p-4 overflow-y-auto w-60 bg-base-200 ">
             {/* <!-- Sidebar content here --> */}
             <li>
               <NavLink to="/dashboard/myProfile">My Profile</NavLink>
@@ -42,7 +42,7 @@ const Dashboard = () => {
             {admin && (
               <>
                 <li>
-                  <NavLink to="/dashboard/allOrders">All Orders</NavLink>
+                  <NavLink to="/dashboard/allOrders">Manage All Orders</NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/addProduct">Add Product</NavLink>

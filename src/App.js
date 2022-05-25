@@ -21,17 +21,19 @@ import MakeAdmin from './pages/Dashboard/MakeAdmin';
 import ManageProducts from './pages/Dashboard/ManageProducts';
 import Blog from './Blog/Blog';
 import Payment from './pages/Dashboard/Payment';
+import Portfolio from './portfolio/Portfolio';
 
 function App() {
   return (
     <div >
      <Navbar></Navbar>
      <Routes>
-       <Route path='/' element={<Home></Home>}></Route>
-       <Route path='/home' element={<Home></Home>}></Route>
-       <Route path='/login' element={<LoginPage></LoginPage>}></Route>
-       <Route path='/register' element={<Register></Register>}></Route>
-       <Route path='/blog' element={<Blog></Blog>}></Route>
+       <Route path='/' element={<Home/>}></Route>
+       <Route path='/home' element={<Home/>}></Route>
+       <Route path='/login' element={<LoginPage/>}></Route>
+       <Route path='/register' element={<Register/>}></Route>
+       <Route path='/blog' element={<Blog/>}></Route>
+       <Route path='/portfolio' element={<Portfolio/>}></Route>
        <Route path='dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
               <Route path='myProfile' element={<MyProfile/>}></Route>
               <Route path='myOrders' element={<MyOrders/>}></Route>
@@ -43,9 +45,9 @@ function App() {
               <Route path='manageProducts' element={<ManageProducts/>}></Route>
 
        </Route>
-       <Route path='/getReview' element={<GetReview></GetReview>}></Route>
+       <Route path='/getReview' element={<GetReview/>}></Route>
        <Route path='/home/:toolId' element={<RequireAuth><ToolDetails/></RequireAuth>}></Route>
-       <Route path='*' element={<NotFound></NotFound>}></Route>
+       <Route path='*' element={<NotFound/>}></Route>
      </Routes>
      <ToastContainer />
      <Footer></Footer>

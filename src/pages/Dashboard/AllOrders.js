@@ -7,7 +7,7 @@ if(isLoading){
     return <Loading></Loading>
 }
 const handleDelete=()=>{}
-  console.log(orders)
+//   console.log(orders)
     return (
         <div className="px-20 pt-10">
       <div className="overflow-x-auto">
