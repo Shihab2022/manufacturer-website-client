@@ -17,6 +17,7 @@ const GetReview = () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('accessToken')}`
     },
     body: JSON.stringify(review),
   })
@@ -35,8 +36,8 @@ const GetReview = () => {
   <form onSubmit={handleReview}>
   <input type="text"  name='name' value={user?.displayName} disabled className="input input-bordered w-full max-w-xs" />
     <input type="text" name='email' value={user?.email} disabled className="input my-5 input-bordered w-full max-w-xs" />
-    <input type="number" name='ratting'  placeholder="Ratting here" className="input input-bordered w-full max-w-xs" />
-    <textarea name='textArea' className="textarea textarea-bordered w-full max-w-xs mt-5" placeholder="Write some text here .. "></textarea>
+    <input type="number" required name='ratting'  placeholder="Ratting here" className="input input-bordered w-full max-w-xs" />
+    <textarea name='textArea' required className="textarea textarea-bordered w-full max-w-xs mt-5" placeholder="Write some text here .. "></textarea>
     <input type="submit"  placeholder="Type here" className="input text-white text-xl mt-3 bg-[#002341] input-bordered w-full max-w-xs" />
   </form>
   

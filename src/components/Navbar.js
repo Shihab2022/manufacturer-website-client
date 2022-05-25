@@ -9,6 +9,7 @@ import Loading from "./Loading";
 
 const Navbar = () => {
   const [user,loading] = useAuthState(auth);
+  // console.log(user)
     const [active,setActive]=useState(false)
  if(loading){
    return <Loading></Loading>
