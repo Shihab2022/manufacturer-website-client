@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {  signOut } from 'firebase/auth';
+import { signOut } from "firebase/auth";
 import { FaTimes } from "react-icons/fa";
-import {  NavLink } from "react-router-dom";
-import logo from '../assets/icon/logo.png'
+import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../assets/icon/logo.png";
 import auth from "../firebase.init";
 import Loading from "./Loading";
 
 const Navbar = () => {
-  const [user,loading] = useAuthState(auth);
+  const navigate=useNavigate()
+  const [user, loading] = useAuthState(auth);
   // console.log(user)
-    const [active,setActive]=useState(false)
- if(loading){
-   return <Loading></Loading>
- }
-  
-// console.log(user)
+  const [active, setActive] = useState(false);
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  const handleDashboard=()=>{
+    navigate('/dashboard/myProfile')
+    console.log('ok')
+  }
+  // console.log(user)
 
   return (
     <nav className="bg-[#002341] text-white shadow-lg">
@@ -23,98 +28,157 @@ const Navbar = () => {
         <div className="flex justify-between">
           <div className="flex space-x-7">
             <div>
-              <NavLink to='/' href="#" className="flex items-center py-4 px-2">
+              <NavLink to="/" href="#" className="flex items-center py-4 px-2">
                 <img src={logo} alt="Logo" className="h-8 w-28 mr-2" />
-                
               </NavLink>
             </div>
 
             <div className="hidden uppercase md:flex items-center space-x-1">
-              <NavLink to='/'
-                
-                className="py-4 px-2 text-white   font-semibold "
-              >
+              <NavLink to="/" className="py-4 px-2 text-white   font-semibold ">
                 Home
               </NavLink>
-              <NavLink to='/blog' className="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300">
+              <NavLink
+                to="/blog"
+                className="py-4 px-2 text-white font-semibold hover:text-green-500 transition duration-300"
+              >
                 Blog
               </NavLink>
-              <NavLink to='/portfolio' className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300">
-              Portfolio
+              <NavLink
+                to="/portfolio"
+                className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
+              >
+                Portfolio
               </NavLink>
-             {user && <NavLink to='/dashboard/myProfile' className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300">
-                Dashboard
-              </NavLink>}
-            
+              {user && (
+                <NavLink
+                  to="/dashboard/myProfile"
+                  className="py-4 px-2 text-white  font-semibold hover:text-green-500 transition duration-300"
+                >
+                  Dashboard
+                </NavLink>
+              )}
             </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-3 ">
-
-         { user ?  <button onClick={()=> {
-           signOut(auth)
-           localStorage.removeItem('accessToken')
-          }} className='text-white text-2xl uppercase '>Log out</button> :  <NavLink to='/login'
-              className="py-2 px-2  font-semibold text-white rounded hover:bg-green-500 hover:text-white uppercase  transition duration-300">
-              Log In
-            </NavLink> }
-
+            {user ? (
+              <button
+                onClick={() => {
+                  signOut(auth);
+                  localStorage.removeItem("accessToken");
+                }}
+                className="text-white text-2xl uppercase "
+              >
+                Log out
+              </button>
+            ) : (
+              <NavLink
+                to="/login"
+                className="py-2 px-2  font-semibold text-white rounded hover:bg-green-500 hover:text-white uppercase  transition duration-300"
+              >
+                Log In
+              </NavLink>
+            )}
           </div>
           {/* <!-- Mobile menu button --> */}
           <div className="md:hidden flex items-center">
-            <button onClick={()=>setActive(!active)} className="outline-none mobile-menu-button">
-            {!active &&  <svg
-                className=" w-6 h-6 text-gray-500 hover:text-green-500 "
-                x-show="!showMenu"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>}
-            { active && <span className="text-2xl text-red-500">
-            <FaTimes/>
-            </span>}
+            <button
+              onClick={() => setActive(!active)}
+              className="outline-none mobile-menu-button"
+            >
+              {!active && (
+                <svg
+                  className=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                  x-show="!showMenu"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              )}
+              {active && (
+                <span className="text-2xl text-red-500">
+                  <FaTimes />
+                </span>
+              )}
             </button>
           </div>
         </div>
       </div>
       {/* <!-- mobile menu --> */}
-     { active && <div className="md:hidden mobile-menu">
-        <ul className="">
-          <li className="active">
-            <NavLink to='/'
-              className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/'
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-            >
-              Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/'
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-          { user ?  <button onClick={()=> signOut(auth)} className='block text-sm px-2 py-4 hover:bg-green-500 transition duration-300'>Log out</button> :  <NavLink to='/login'
-              className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">
-              Log In
-            </NavLink> }
-          </li>
-        </ul>
-      </div>}
-  
+      {active && (
+        <div className="md:hidden mobile-menu">
+          <ul className="">
+            <li className="active">
+              <NavLink
+                to="/"
+                className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blog"
+                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+              >
+                Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/portfolio"
+                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+              >
+                Portfolio
+              </NavLink>
+            </li>
+            {user && (
+              <li>
+                <div class="collapse">
+                  <input onClick={handleDashboard} type="checkbox" class="peer" />
+                  <div  class="collapse-title  text-primary-content  peer-checked:bg-amber-400 peer-checked:text-secondary-content">
+                   Dashboard
+                  </div>
+                  <div class="collapse-content  text-primary-content peer-checked:bg-amber-400 peer-checked:text-secondary-content">
+                  <label
+                      for="my-drawer-2"
+                      className="btn border-0 bg-amber-400    lg:hidden"
+                    >
+                      Show Side bar
+                    </label>
+                  </div>
+                </div>
+              
+              </li>
+            )}
+            <li>
+              {user ? (
+                <button
+                  onClick={() => {
+                    signOut(auth);
+                    localStorage.removeItem("accessToken");
+                  }}
+                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                >
+                  Log out
+                </button>
+              ) : (
+                <NavLink
+                  to="/login"
+                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                >
+                  Log In
+                </NavLink>
+              )}
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

@@ -75,7 +75,7 @@ const updateProfile=e=>{
     <div>
       <div className="hero py-5  lg:py-20">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center block w-[600px] lg:text-left">
+          <div className="text-center block lg:w-[600px] lg:text-left">
         
             <div className="lg:pl-10 flex justify-center w-full items-center flex-col">
             <h2 className="text-2xl lg:text-4xl font-bold mb-8 lg:mb-16 uppercase text-cyan-600">Your Profile </h2>
@@ -103,7 +103,7 @@ const updateProfile=e=>{
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm ">
             <div className="card-body">
-            <h2 className=" text-2xl lg:text-4xl font-bold mb-16 text-center text-cyan-600 uppercase">update your Profile </h2>
+            <h2 className=" text-2xl lg:text-4xl font-bold mb-3 lg:mb-16 text-center text-cyan-600 uppercase">update your Profile </h2>
             <form onSubmit={updateProfile}>
 
             <div className="form-control mb-2">

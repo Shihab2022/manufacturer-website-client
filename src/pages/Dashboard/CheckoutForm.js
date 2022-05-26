@@ -80,6 +80,7 @@ const payment={
     transactionId : paymentIntent.id
 }
 
+// fetch(`http://localhost:5000/create-payment-intent/${_id}`,{
 fetch(`https://frozen-badlands-14934.herokuapp.com/order/${_id}`,{
     method: "PATCH",
     headers: {

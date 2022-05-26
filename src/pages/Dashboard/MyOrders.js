@@ -48,8 +48,6 @@ const MyOrders = () => {
       }
     });
   };
-console.log(orders)
-console.log(orders?.transactionId)
   return (
     <div className="px-20 pt-10">
       <div className="overflow-x-auto">

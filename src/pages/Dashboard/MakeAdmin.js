@@ -30,7 +30,7 @@ const MakeAdmin = () => {
       method: "PUT",
       headers: {
         "content-type": "application/json",
-        // authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
       },
     })
       .then((res) => res.json())
@@ -55,8 +55,7 @@ const MakeAdmin = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Make Admin</th>
-              <th>delete</th>
-              <th>payment</th>
+            
             </tr>
           </thead>
           <tbody>
@@ -75,12 +74,7 @@ const MakeAdmin = () => {
                     admin
                   </button>
                 </td>
-                <td>
-                  <button className="btn btn-xs bg-red-700">delete</button>
-                </td>
-                <td>
-                  <button className="btn btn-xs bg-amber-700">payment</button>
-                </td>
+               
               </tr>
             ))}
           </tbody>

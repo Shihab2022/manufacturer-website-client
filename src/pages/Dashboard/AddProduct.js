@@ -36,7 +36,8 @@ const AddProduct = () => {
                     fetch('https://frozen-badlands-14934.herokuapp.com/tools', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
                            
                           },
                           body: JSON.stringify(product)
@@ -61,20 +62,20 @@ const AddProduct = () => {
     }
   return (
     <div
-      class="hero min-h-screen"
+      className="hero min-h-screen"
       style={{ backgroundImage: `url(${bgProducts})` }}
     >
-      <div class="container flex justify-center items-center h-screen mx-auto ">
+      <div className="container flex justify-center items-center h-screen mx-auto ">
         <form
           onSubmit={handleAddProduct}
-          class="w-1/2 shadow-lg shadow-yellow-600 rounded-md py-5 px-4"
+          className="w-1/2 shadow-lg shadow-yellow-600 rounded-md py-5 px-4"
         >
-          <h1 class="text-3xl text-center uppercase font-bold my-3">
+          <h1 className="text-3xl text-center uppercase font-bold my-3">
             add <span className="text-amber-600">new </span> product
           </h1>
-          <div class="p-3">
+          <div className="p-3">
             <input
-              class="input input-bordered input-warning w-full "
+              className="input input-bordered input-warning w-full "
               type="text"
               name='name'
               placeholder="Product Name"
@@ -82,16 +83,16 @@ const AddProduct = () => {
             />
           </div>
 
-          <div class="p-3">
+          <div className="p-3">
             <textarea
-              class="textarea  input-warning w-full"
+              className="textarea  input-warning w-full"
               name='about'
               placeholder="Write some description for this product ..."
             ></textarea>
           </div>
-          <div class="p-3">
+          <div className="p-3">
             <input
-              class="input input-bordered input-warning w-[48%]  "
+              className="input input-bordered input-warning w-[48%]  "
               type="number"
               name='miniQuantity'
               placeholder="Minimum Quantity"
@@ -99,23 +100,23 @@ const AddProduct = () => {
             />
 
             <input
-              class="input input-bordered input-warning w-[48%] ml-[4%] "
+              className="input input-bordered input-warning w-[48%] ml-[4%] "
               type="number"
               name='aviQuantity'
               placeholder="Available  Quantity"
               required
             />
           </div>
-          <div class="p-3">
+          <div className="p-3">
             <input
-              class="input input-bordered input-warning w-[48%]  "
+              className="input input-bordered input-warning w-[48%]  "
               type="file"
               name='photo'
               required
             />
 
             <input
-              class="input input-bordered input-warning w-[48%] ml-[4%] "
+              className="input input-bordered input-warning w-[48%] ml-[4%] "
               type="number"
               name='price'
               placeholder="Product Price"
@@ -124,7 +125,7 @@ const AddProduct = () => {
           </div>
 
           <div className="flex justify-center">
-            <button class="w-1/2 bg-[#002341] uppercase text-white text-xl rounded-md  py-3">
+            <button className="w-1/2 bg-[#002341] uppercase text-white text-xl rounded-md  py-3">
               add
             </button>
           </div>

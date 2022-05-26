@@ -22,10 +22,14 @@ const ManageProducts = () => {
           confirmButtonText: "Yes, delete it!",
         }).then((result) => {
           if (result.isConfirmed) {
-            const url = `http://localhost:5000/tools/${_id}`;
-            // const url = `https://frozen-badlands-14934.herokuapp.com/tools/${_id}`;
+            // const url = `http://localhost:5000/tools/${_id}`;
+            const url = `https://frozen-badlands-14934.herokuapp.com/tools/${_id}`;
             fetch(url, {
               method: "DELETE",
+              headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              },
             })
               .then((res) => res.json())
               .then((data) => {
@@ -42,8 +46,8 @@ const ManageProducts = () => {
     
  
     return (
-        <div class="overflow-x-auto lg:my-14  w-full">
-        <table class="table w-full">
+        <div className="overflow-x-auto lg:my-14  w-full">
+        <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -62,15 +66,15 @@ const ManageProducts = () => {
             {/* <!-- row 1 --> */}
             {
                 products?.map((product,index)=>
-                    <tr>
+                    <tr key={index}>
                     <th>
                       {index+1}
                     </th>
                     <td>
-                      <div class="flex items-center space-x-3">
+                      <div className="flex items-center space-x-3">
                       
-                      <div class="avatar">
-                          <div class="mask mask-squircle w-12 h-12">
+                      <div className="avatar">
+                          <div className="mask mask-squircle w-12 h-12">
                             <img src={product.img} alt="product img" />
                           </div>
                         </div>
@@ -81,8 +85,8 @@ const ManageProducts = () => {
                     </td>
                     <td>{product.aviQuantity}</td>
                     <td>{product.price}</td>
-                    <td><button onClick={()=>handleDelete(product._id,product.name)} class="btn bg-red-800 btn-xs">DELETE</button></td>
-                    <td><button class="btn btn-xs">UPDATE</button></td>
+                    <td><button onClick={()=>handleDelete(product._id,product.name)} className="btn bg-red-800 btn-xs">DELETE</button></td>
+                    <td><button className="btn btn-xs">UPDATE</button></td>
                    
                   </tr>
                 
