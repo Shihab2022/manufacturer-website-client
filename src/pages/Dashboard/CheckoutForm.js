@@ -1,15 +1,18 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import Loading from "../../components/Loading";
 
 const CheckoutForm = ({ order }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
+  const [processing, setProcessing] = useState(null);
   const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const { cost, name, email } = order;
-
+  const { cost, name, email ,_id} = order;
+// console.log(_id)
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
@@ -27,6 +30,9 @@ const CheckoutForm = ({ order }) => {
       });
   }, [cost]);
 
+  if(processing){
+      return <Loading></Loading>
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) {
@@ -44,6 +50,7 @@ const CheckoutForm = ({ order }) => {
     setCardError(error?.message || "");
 
     setSuccess("");
+    setProcessing(true)
     ///confirm card payment
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clientSecret, {
@@ -57,11 +64,41 @@ const CheckoutForm = ({ order }) => {
       });
     if (intentError) {
       setCardError(intentError.message);
-    } else {
+      setProcessing(false)
+    }
+    
+    else {
       setCardError("");
       console.log(paymentIntent);
       setTransactionId(paymentIntent.id);
       setSuccess("Congrats ! Your payment is complete .");
+
+////if success then data send to data base
+const payment={
+    orderId:_id,
+    transactionId : paymentIntent.id
+}
+
+fetch(`http://localhost:5000/order/${_id}`,{
+    method: "PATCH",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    },
+    body: JSON.stringify(payment),
+  })
+.then(res=>res.json())
+.then(data=>{
+    if(data.acknowledged){
+        toast.success('Your payment is successfully !!.')
+    }
+    else{
+        toast.error('something wrong please try again !!')
+    }
+    setProcessing(false)
+})
+
+
     }
   };
 

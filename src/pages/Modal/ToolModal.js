@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 // import { useForm } from "react-hook-form";
 
 const ToolModal = ({tool}) => {
+
   const [user]=useAuthState(auth)
   const {aviQuantity,name,price,miniQuantity}=tool
 const [quantity,setQuantity]=useState('')
@@ -46,8 +47,7 @@ const handelSubmit=e=>{
   })
   .then(response => response.json())
   .then(data => {
-    navigate('/payment')
-
+    navigate('/dashboard')
     toast.success(`Please payment $ ${pay}`)
     // console.log('Success:', data);
   })

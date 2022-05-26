@@ -48,7 +48,8 @@ const MyOrders = () => {
       }
     });
   };
-
+console.log(orders)
+console.log(orders?.transactionId)
   return (
     <div className="px-20 pt-10">
       <div className="overflow-x-auto">
@@ -77,18 +78,17 @@ const MyOrders = () => {
                 <td>{order.product}</td>
                 <td>{order.quantity}</td>
                 <td>{order.cost}</td>
+           
                 <td>
-                  <button
-                    onClick={() => handleDelete(order._id, order.product)}
-                    className="btn btn-xs bg-red-700"
-                  >
+             
+                {  <button onClick={() => handleDelete(order._id, order.product)} disabled={order?.paid} className="btn btn-xs bg-red-700">
                     delete
-                  </button>
+                  </button>}
                 </td>
                 <td>
-                  <Link to={`/dashboard/payment/${order?._id}`}  className="btn btn-xs bg-amber-700">
+                  {!order?.paid ?<Link to={`/dashboard/payment/${order?._id}`}  className="btn btn-xs bg-amber-700">
                     payment
-                  </Link>
+                  </Link> :<p className="text-sm ">{order?.transactionId}</p>}
                 </td>
               </tr>
             ))}

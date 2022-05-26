@@ -26,10 +26,10 @@ const Payment = () => {
         <div class="hero-content h-screen flex-col lg:flex-row-reverse">
           <div class="text-center w-1/2 lg:ml-20 lg:text-left">
               <h2 className='text-3xl font-bold text-cyan-600 font-mono'>Your purchase product </h2>
-            <h1 class="text-3xl  mt-5 font-bold">Your Product : <span className='text-amber-600'>{order.product}</span></h1>
-            <h1 class="text-2xl my-3 font-bold"> Product Quantity: <span className='text-amber-600'>{order.quantity}</span></h1>
+            <h1 class="text-3xl  mt-5 font-bold">Your Product : <span className='text-amber-600'>{order?.product}</span></h1>
+            <h1 class="text-2xl my-3 font-bold"> Product Quantity: <span className='text-amber-600'>{order?.quantity}</span></h1>
            
-            <h1 class="text-2xl  font-bold"> Cost : <span className='text-amber-600'>{order.cost}</span></h1>
+            <h1 class="text-2xl  font-bold"> Cost : <span className='text-amber-600'>{order?.cost}</span></h1>
            
           </div>
           <div class="card flex-shrink-0 w-1/2 max-w-md shadow-xl shadow-cyan-700 py-10 px-8  bg-base-100">
