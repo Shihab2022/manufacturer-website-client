@@ -2,6 +2,10 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Loading';
+import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from './CheckoutForm';
+const stripePromise = loadStripe('pk_test_51L3UMIDXj41unhG3dxLzae0QBjbwLay6NBwKLsMeG3IidSUeIYf01NjLcl6VLn9vMSWkLVgEnjJkuNZoyuKq4uTo00dhWenOv3');
 
 const Payment = () => {
     const {orderId}=useParams()
@@ -16,7 +20,7 @@ const Payment = () => {
     if(isLoading){
         return <Loading></Loading>
     }
-    console.log(order)
+    // console.log(order)
     return (
        
         <div class="hero-content h-screen flex-col lg:flex-row-reverse">
@@ -28,27 +32,11 @@ const Payment = () => {
             <h1 class="text-2xl  font-bold"> Cost : <span className='text-amber-600'>{order.cost}</span></h1>
            
           </div>
-          <div class="card flex-shrink-0 w-1/2 max-w-md  bg-base-100">
-            <div class="card-body">
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Email</span>
-                </label>
-                <input type="text" placeholder="email" class="input input-bordered" />
-              </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Password</span>
-                </label>
-                <input type="text" placeholder="password" class="input input-bordered" />
-                <label class="label">
-                  <button href="#" class="label-text-alt link link-hover">Forgot password?</button>
-                </label>
-              </div>
-              <div class="form-control mt-6">
-                <button class="btn btn-primary">Login</button>
-              </div>
-            </div>
+          <div class="card flex-shrink-0 w-1/2 max-w-md shadow-xl shadow-cyan-700 py-10 px-8  bg-base-100">
+          <Elements stripe={stripePromise}>
+    <CheckoutForm order={order} />
+  </Elements>
+            
           </div>
         </div>
     
