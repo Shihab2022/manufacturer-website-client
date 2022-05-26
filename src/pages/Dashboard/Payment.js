@@ -9,7 +9,8 @@ const stripePromise = loadStripe('pk_test_51L3UMIDXj41unhG3dxLzae0QBjbwLay6NBwKL
 
 const Payment = () => {
     const {orderId}=useParams()
-    const url=`http://localhost:5000/paymentOrder/${orderId}`
+    // const url=`http://localhost:5000/paymentOrder/${orderId}`
+    const url=`https://frozen-badlands-14934.herokuapp.com/paymentOrder/${orderId}`
     const {data:order,isLoading}=useQuery(['order',orderId],()=>fetch(url,{
         method:'GET',
         headers:{

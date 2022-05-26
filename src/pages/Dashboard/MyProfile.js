@@ -10,7 +10,8 @@ const MyProfile = () => {
   const [loading,setLoading]=useState(null)
   
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    // fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(`https://frozen-badlands-14934.herokuapp.com/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [user,users]);
@@ -43,7 +44,8 @@ const updateProfile=e=>{
                     number:e.target.number.value,
                     img:image
                 }
-                const url=`http://localhost:5000/updateUser/${user?.email}`
+                const url=`https://frozen-badlands-14934.herokuapp.com/updateUser/${user?.email}`
+                // const url=`http://localhost:5000/updateUser/${user?.email}`
                 fetch(url, {
                     method: 'POST',
                     headers: {

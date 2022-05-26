@@ -32,7 +32,8 @@ const AddProduct = () => {
                         price:e.target.price.value,
                     }
                     
-                    fetch('http://localhost:5000/tools', {
+                    // fetch('http://localhost:5000/tools', {
+                    fetch('https://frozen-badlands-14934.herokuapp.com/tools', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

@@ -12,8 +12,8 @@ const GetReview = () => {
       ratting:e.target.ratting.value,
       about:e.target.textArea.value
     }
-      // fetch('https://frozen-badlands-14934.herokuapp.com/review', {
-  fetch('http://localhost:5000/review', {
+      fetch('https://frozen-badlands-14934.herokuapp.com/review', {
+  // fetch('http://localhost:5000/review', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

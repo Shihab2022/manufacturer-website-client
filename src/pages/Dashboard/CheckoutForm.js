@@ -14,7 +14,8 @@ const CheckoutForm = ({ order }) => {
   const { cost, name, email ,_id} = order;
 // console.log(_id)
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    // fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://frozen-badlands-14934.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -79,7 +80,7 @@ const payment={
     transactionId : paymentIntent.id
 }
 
-fetch(`http://localhost:5000/order/${_id}`,{
+fetch(`https://frozen-badlands-14934.herokuapp.com/order/${_id}`,{
     method: "PATCH",
     headers: {
       "content-type": "application/json",

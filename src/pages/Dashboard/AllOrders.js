@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../components/Loading'
 const AllOrders = () => {
-    const { data:orders, isLoading, refetch } = useQuery('orders', () =>fetch('http://localhost:5000/order').then(res =>res.json()))
+    const { data:orders, isLoading, refetch } = useQuery('orders', () =>fetch('https://frozen-badlands-14934.herokuapp.com/order').then(res =>res.json()))
 if(isLoading){
     return <Loading></Loading>
 }

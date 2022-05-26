@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
     const Swal = require("sweetalert2");
 
-    const { data:products, isLoading, refetch } = useQuery('orders', () =>fetch('http://localhost:5000/tools').then(res =>res.json()))
+    const { data:products, isLoading, refetch } = useQuery('orders', () =>fetch('https://frozen-badlands-14934.herokuapp.com/tools').then(res =>res.json()))
     
     if(isLoading){
         return <Loading></Loading>

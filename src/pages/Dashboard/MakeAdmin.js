@@ -9,7 +9,8 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("http://localhost:5000/users",{
+    // fetch("http://localhost:5000/users",{
+    fetch("https://frozen-badlands-14934.herokuapp.com/users",{
         method:'GET',
         headers:{
             'content-type':'application/json',
@@ -23,7 +24,8 @@ const MakeAdmin = () => {
 
 //   console.log(users)
   const makeAdmin = (id) => {
-    const url = `http://localhost:5000/user/admin/${id}`;
+    // const url = `http://localhost:5000/user/admin/${id}`;
+    const url = `https://frozen-badlands-14934.herokuapp.com/user/admin/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
