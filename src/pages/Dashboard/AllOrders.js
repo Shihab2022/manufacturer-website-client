@@ -27,12 +27,13 @@ if(isLoading){
     return <Loading></Loading>
 }
     return (
-        <div className="px-20 pt-10">
+        <div className="md:px-20 md:p-0 p-3 lg:pt-10">
       <div className="overflow-x-auto">
         <h1 className="text-center mb-5 text-3xl font-bold  uppercase">
           All  order
         </h1>
-        <table className="table w-full">
+        <div className=' hidden md:block'>
+        <table className="table w-[100%]">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -42,6 +43,7 @@ if(isLoading){
               <th>quantity</th>
               <th>Cost</th>
               <th>status</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -63,6 +65,38 @@ if(isLoading){
             ))}
           </tbody>
         </table>
+        </div>
+     
+
+
+<div>
+
+{/* for mobile device */}
+
+<div className='block md:hidden'>
+{orders?.map((order, index) => (
+
+
+<div key={index} class="card   my-5 rounded-md bg-zinc-100 shadow-lg shadow-amber-50">
+  <div class="card-body ">
+   <div className='flex justify-between'>
+     <p className='text-amber-800'>#{index + 1}</p>
+     <p className='font-bold'>Quantity : {order?.quantity}</p>
+     {order?.status==='pending'?<button onClick={()=>handleShift(order?._id)}  className="btn btn-xs bg-amber-700">
+                    shift
+                  </button> :<button className="btn btn-xs loading">Pending</button>}
+   </div>
+    <p className='text-xl'>{order?.product}</p>
+    <p className='font-bold'>${order?.cost}</p>
+  </div>
+</div>
+
+))}
+</div>
+
+
+
+      </div>
       </div>
     </div>
     );

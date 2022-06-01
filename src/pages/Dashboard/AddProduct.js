@@ -65,10 +65,10 @@ const AddProduct = () => {
       className="hero min-h-screen"
       style={{ backgroundImage: `url(${bgProducts})` }}
     >
-      <div className="container flex justify-center items-center h-screen mx-auto ">
+      <div className="container flex justify-center items-center lg:h-screen mx-auto ">
         <form
           onSubmit={handleAddProduct}
-          className="w-1/2 shadow-lg shadow-yellow-600 rounded-md py-5 px-4"
+          className="lg:w-1/2 mx-3 shadow-lg shadow-yellow-600 rounded-md py-5 px-4"
         >
           <h1 className="text-3xl text-center uppercase font-bold my-3">
             add <span className="text-amber-600">new </span> product

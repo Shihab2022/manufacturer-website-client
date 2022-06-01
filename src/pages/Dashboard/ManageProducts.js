@@ -46,7 +46,13 @@ const ManageProducts = () => {
     
  
     return (
-        <div className="overflow-x-auto lg:my-14  w-full">
+        <div className="overflow-x-auto lg:px-10   w-full">
+
+<h1 className="text-center my-8 text-3xl font-bold  uppercase">
+          All  Product
+        </h1>
+          {/* for lg device */}
+        <div className='hidden md:block'>
         <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
@@ -71,8 +77,7 @@ const ManageProducts = () => {
                       {index+1}
                     </th>
                     <td>
-                      <div className="flex items-center space-x-3">
-                      
+                      <div className="flex items-center space-x-3">                     
                       <div className="avatar">
                           <div className="mask mask-squircle w-12 h-12">
                             <img src={product.img} alt="product img" />
@@ -86,18 +91,33 @@ const ManageProducts = () => {
                     <td>{product.aviQuantity}</td>
                     <td>{product.price}</td>
                     <td><button onClick={()=>handleDelete(product._id,product.name)} className="btn bg-red-800 btn-xs">DELETE</button></td>
-                    <td><button className="btn btn-xs">UPDATE</button></td>
-                   
-                  </tr>
-                
-                )}
-           
-         
-           
-          </tbody>
-        
-          
+                    <td><button className="btn btn-xs">UPDATE</button></td>                  
+                  </tr>                
+                )}                            
+          </tbody>               
         </table>
+        </div>
+
+
+
+{/* for mobile device */}
+        <div className='block md:hidden px-2'>
+{ products?.map((product,index)=>
+<div key={index} class="card   my-5 rounded-md bg-zinc-200 shadow-lg shadow-amber-50">
+  <div class="card-body ">
+   <div className='flex justify-between'>
+     <p className='text-amber-800'>#{index + 1}</p>
+     <p className='font-bold'>Quantity : {product.aviQuantity}</p>
+     <button onClick={()=>handleDelete(product._id,product.name)} className="btn bg-red-800 btn-xs">DELETE</button> 
+     <button className="btn ml-3 btn-xs">UPDATE</button>
+   </div>
+    <p className='text-xl'> {product.name}</p>
+    <p className='font-bold'>${product.price}</p>
+  </div>
+</div>
+)}
+
+      </div>
       </div>
     );
 };
