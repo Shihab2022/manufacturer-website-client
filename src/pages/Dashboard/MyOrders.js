@@ -49,12 +49,13 @@ const MyOrders = () => {
     });
   };
   return (
-    <div className="px-20 pt-10">
+    <div className="md:px-20 pt-5 md:pt-10">
       <div className="overflow-x-auto">
         <h1 className="text-center mb-5 text-3xl font-bold  uppercase">
           <span className="text-amber-400">{user?.displayName}</span> your order
         </h1>
-        <table className="table w-full">
+     <div className="hidden md:block">
+     <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -92,6 +93,40 @@ const MyOrders = () => {
             ))}
           </tbody>
         </table>
+     </div>
+
+
+        {/* for mobile device */}
+
+<div className='block px-3 md:hidden'>
+{orders?.map((order, index) => (
+
+
+<div key={index} class="card   my-5 rounded-md bg-zinc-300 shadow-lg shadow-amber-50">
+  <div class="card-body ">
+   <div className='flex justify-between'>
+     <p className='text-amber-800'>#{index + 1}</p>
+     <p className='font-bold'>Quantity : {order?.quantity}</p>
+    
+   </div>
+    <p className='text-xl'>{order?.product}</p>
+    <p className='font-bold'>${order?.cost}</p>
+    <div className="flex justify-between">
+    {  <button onClick={() => handleDelete(order._id, order.product)} disabled={order?.paid} className="btn btn-xs bg-red-700">
+                    delete
+                  </button>}
+                  <>
+                  {!order?.paid ?<Link to={`/dashboard/payment/${order?._id}`}  className="btn btn-xs bg-amber-700">
+ payment
+ </Link> :<p className="text-sm text-center">{order?.transactionId}</p>}
+                  </>
+ 
+    </div>
+  </div>
+</div>
+
+))}
+</div>
       </div>
     </div>
   );

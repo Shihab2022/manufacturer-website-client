@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../components/Loading';
 import { toast } from "react-toastify";
@@ -105,14 +105,24 @@ const ManageProducts = () => {
 { products?.map((product,index)=>
 <div key={index} class="card   my-5 rounded-md bg-zinc-200 shadow-lg shadow-amber-50">
   <div class="card-body ">
-   <div className='flex justify-between'>
+  
+ <div className='flex justify-between mb-3 items-center'>
+ <div>
+   <p className='text-xl'> {product.name}</p>
+    <p className='font-bold'>${product.price}</p>
+   </div>
+   <div class="avatar">
+  <div class="w-20 rounded-xl">
+  <img src={product.img} alt="product img" />
+  </div>
+</div>
+ </div>
+    <div className='flex justify-between'>
      <p className='text-amber-800'>#{index + 1}</p>
      <p className='font-bold'>Quantity : {product.aviQuantity}</p>
      <button onClick={()=>handleDelete(product._id,product.name)} className="btn bg-red-800 btn-xs">DELETE</button> 
      <button className="btn ml-3 btn-xs">UPDATE</button>
    </div>
-    <p className='text-xl'> {product.name}</p>
-    <p className='font-bold'>${product.price}</p>
   </div>
 </div>
 )}

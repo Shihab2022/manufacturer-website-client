@@ -42,12 +42,14 @@ const MakeAdmin = () => {
       });
   };
   return (
-    <div className="px-20 pt-10">
+    <div className="md:px-20 pt-10">
       <div className="overflow-x-auto">
         <h1 className="text-center mb-5 text-3xl font-bold  uppercase">
-          All user
+          All User
         </h1>
-        <table className="table w-full">
+     {/* for lg device */}
+     <div className="hidden md:block">
+     <table className="table w-full">
           {/* <!-- head --> */}
           <thead>
             <tr>
@@ -79,6 +81,35 @@ const MakeAdmin = () => {
             ))}
           </tbody>
         </table>
+     </div>
+
+     {/* for mobile device */}
+
+     <div className='block md:hidden px-3'>
+     {users?.map((user, index) => (
+
+
+<div key={index} class="card   my-5 rounded-md bg-zinc-300 shadow-lg shadow-amber-50">
+  <div class="card-body ">
+   <div className='flex justify-between'>
+     <p className='text-amber-800'>#{index + 1}</p>
+     
+     <button
+                    disabled={user?.role === "admin"}
+                    onClick={() => makeAdmin(user?._id)}
+                    className="btn btn-xs bg-yellow-700"
+                  >
+                    admin
+                  </button>
+   </div>
+    <p className='text-xl'>{user?.name} </p>
+    <p className='font-bold'>{user?.email}</p>
+  </div>
+</div>
+
+))}
+</div>
+
       </div>
     </div>
   );
