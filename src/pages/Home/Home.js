@@ -11,7 +11,6 @@ const Home = () => {
             <Slider></Slider>
             <Tools></Tools>
             <WebSection></WebSection>
-          
             <Review></Review>
             <Summary></Summary>
         </div>

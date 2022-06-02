@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
-import parralex from '../../assets/img/parralex.jpg'
 import auth from '../../firebase.init';
 const GetReview = () => {
   const [user]=useAuthState(auth)
@@ -30,13 +29,13 @@ const GetReview = () => {
     console.log(review)
   }
     return (
-        <div style={{ backgroundImage: `url(${parralex})` }} className='h-screen flex justify-center items-center'>
-          <div className="card w-96 bg-base-100 shadow-2xl">
+        <div className='h-screen bg-zinc-300 px-3 flex justify-center items-center'>
+          <div className="card w-96 bg-base-100 shadow-orange-400 shadow-2xl">
   <div className="card-body">
   <form onSubmit={handleReview}>
   <input type="text"  name='name' value={user?.displayName} disabled className="input input-bordered w-full max-w-xs" />
     <input type="text" name='email' value={user?.email} disabled className="input my-5 input-bordered w-full max-w-xs" />
-    <input type="number" required name='ratting'  placeholder="Ratting here" className="input input-bordered w-full max-w-xs" />
+    <input type="number" required name='ratting' placeholder="Ratting here" className="input input-bordered w-full max-w-xs" />
     <textarea name='textArea' required className="textarea textarea-bordered w-full max-w-xs mt-5" placeholder="Write some text here .. "></textarea>
     <input type="submit"  placeholder="Type here" className="input text-white text-xl mt-3 bg-[#002341] input-bordered w-full max-w-xs" />
   </form>

@@ -29,8 +29,10 @@ const MyOrders = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
+        console.log(_id)
         // const url = `http://localhost:5000/order/${_id}`;
         const url = `https://frozen-badlands-14934.herokuapp.com/order/${_id}`;
+        console.log(url)
         fetch(url, {
           method: "DELETE",
         })
@@ -118,7 +120,7 @@ const MyOrders = () => {
                   <>
                   {!order?.paid ?<Link to={`/dashboard/payment/${order?._id}`}  className="btn btn-xs bg-amber-700">
  payment
- </Link> :<p className="text-sm text-center">{order?.transactionId}</p>}
+ </Link> :<p className="text-sm text-center">Id : {order?.transactionId}</p>}
                   </>
  
     </div>

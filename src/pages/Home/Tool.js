@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 const Tool = ({ tool }) => {
   const { name, img, price ,_id} = tool;
-//   const [data,setData]=useState('')
-//   const navigate=useNavigate()
+
   return (
     <div className="relative">
       <img src={img} className="h-[350px] w-[340px] rounded shadow-lg" alt="" />
@@ -22,7 +21,7 @@ const Tool = ({ tool }) => {
             <FaStar />
           </div>
         </div>
-        <Link to={`/home/${_id}`}  className="ml-24  border-zinc-400 hover:text-white hover:bg-amber-600 text-zinc-600 rounded-full p-2 border-2 text-3xl">
+        <Link to={`/home/${_id}`}  className="ml-24  border-zinc-400 hover:text-white hover:bg-amber-600 text-zinc-600 rounded-full  h-14 w-14 flex justify-center items-center border-2 text-3xl">
           <FaShoppingBasket />
         </Link>
       </div>
