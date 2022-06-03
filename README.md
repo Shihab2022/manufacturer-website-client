@@ -64,3 +64,5 @@
 - daisyui
 
 - sweetalert2
+
+- AOS (for animation)

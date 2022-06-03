@@ -97,7 +97,7 @@ const Slider = () => {
                  data-aos-duration="100" 
                  data-aos-delay='500' 
                  data-aos="fade-right"  
-                 className="text-4xl  absolute left-60 mt-14  top-0 text-white font-extrabold">
+                 className="text-4xl  absolute  left-60 mt-14  top-0 text-white font-extrabold">
                     Festool Installers Set</h1>
             <h1
              data-aos-duration="1500"

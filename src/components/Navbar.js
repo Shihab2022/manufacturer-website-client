@@ -1,32 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
-import { FaTimes } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../assets/icon/logo.png";
 import auth from "../firebase.init";
 import Loading from "./Loading";
 
-const Navbar = () => {
-  const navigate=useNavigate()
+const NewTest = () => {
+  const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
-  // console.log(user)
-  const [active, setActive] = useState(false);
   if (loading) {
     return <Loading></Loading>;
   }
 
-  const handleDashboard=()=>{
-    navigate('/dashboard/myProfile')
-    console.log('ok')
-  }
-  // console.log(user)
+  const handleDashboard = () => {
+    navigate("/dashboard/myProfile");
+  };
+
 
   return (
     <nav className="bg-[#002341] text-white shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between">
           <div className="flex space-x-7">
+
+          { user && <div onClick={handleDashboard} className="md:hidden mr-10">
+          <input  type="checkbox" class="peer hidden" />
+           
+           <label tabindex="0" for="my-drawer-2" class="btn btn-ghost btn-circle">
+             <svg
+               xmlns="http://www.w3.org/2000/svg"
+               class="h-8 w-8 mt-2"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke="currentColor"
+             >
+               <path
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 stroke-width="2"
+                 d="M4 6h16M4 12h16M4 18h7"
+               />
+             </svg>
+           </label>
+          </div>}
+
+            
             <div>
               <NavLink to="/" href="#" className="flex items-center py-4 px-2">
                 <img src={logo} alt="Logo" className="h-8 w-28 mr-2" />
@@ -80,107 +99,88 @@ const Navbar = () => {
               </NavLink>
             )}
           </div>
+
           {/* <!-- Mobile menu button --> */}
           <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setActive(!active)}
-              className="outline-none mobile-menu-button"
-            >
-              {!active && (
-                <svg
-                  className=" w-6 h-6 text-gray-500 hover:text-green-500 "
-                  x-show="!showMenu"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+            <div className="flex justify-end">
+              <div class="dropdown  dropdown-end">
+                <label tabindex="0"  class=" m-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="inline-block w-8 h-8 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                  </svg>
+                </label>
+                <ul
+                  tabindex="0"
+                  class="dropdown-content menu p-2 mt-4 mr-0 
+                  rounded-sm shadow bg-[#134068] text-xl font-semibold  w-60"
                 >
-                  <path d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-              )}
-              {active && (
-                <span className="text-2xl text-red-500">
-                  <FaTimes />
-                </span>
-              )}
-            </button>
+                  <li className="active">
+                    <NavLink
+                      to="/"
+                      className="block  px-2 py-4 text-white  font-semibold"
+                    >
+                      Home
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/blog"
+                      className="block mt-3  px-2 py-4
+                       hover:bg-green-500 transition duration-300"
+                    >
+                      Blog
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/portfolio"
+                      className="block mt-3 px-2 py-4
+                       hover:bg-green-500 transition duration-300"
+                    >
+                      Portfolio
+                    </NavLink>
+                  </li>
+           
+                  <li>
+                    {user ? (
+                      <button
+                        onClick={() => {
+                          signOut(auth);
+                          localStorage.removeItem("accessToken");
+                        }}
+                        className=" mt-3 px-2 py-4 
+                        hover:bg-green-500 transition duration-300"
+                      >
+                        Log out
+                      </button>
+                    ) : (
+                      <NavLink
+                        to="/login"
+                        className="block   px-2 py-4 
+                        hover:bg-green-500 transition duration-300"
+                      >
+                        Log In
+                      </NavLink>
+                    )}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      {/* <!-- mobile menu --> */}
-      {active && (
-        <div className="md:hidden mobile-menu">
-          <ul className="">
-            <li className="active">
-              <NavLink
-                to="/"
-                className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/blog"
-                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/portfolio"
-                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-              >
-                Portfolio
-              </NavLink>
-            </li>
-            {user && (
-              <li>
-                <div class="collapse">
-                  <input onClick={handleDashboard} type="checkbox" class="peer" />
-                  <div  class="collapse-title  text-primary-content  peer-checked:bg-amber-400 peer-checked:text-secondary-content">
-                   Dashboard
-                  </div>
-                  <div class="collapse-content  text-primary-content peer-checked:bg-amber-400 peer-checked:text-secondary-content">
-                  <label
-                      for="my-drawer-2"
-                      className="btn border-0 bg-amber-400    lg:hidden"
-                    >
-                      Show Side bar
-                    </label>
-                  </div>
-                </div>
-              
-              </li>
-            )}
-            <li>
-              {user ? (
-                <button
-                  onClick={() => {
-                    signOut(auth);
-                    localStorage.removeItem("accessToken");
-                  }}
-                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-                >
-                  Log out
-                </button>
-              ) : (
-                <NavLink
-                  to="/login"
-                  className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-                >
-                  Log In
-                </NavLink>
-              )}
-            </li>
-          </ul>
-        </div>
-      )}
     </nav>
   );
 };
 
-export default Navbar;
+export default NewTest;

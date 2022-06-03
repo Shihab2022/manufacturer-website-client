@@ -23,10 +23,12 @@ import Blog from './Blog/Blog';
 import Payment from './pages/Dashboard/Payment';
 import Portfolio from './portfolio/Portfolio';
 
+
 function App() {
   return (
     <div >
      <Navbar></Navbar>
+    {/* <NewTest></NewTest> */}
      <Routes>
        <Route path='/' element={<Home/>}></Route>
        <Route path='/home' element={<Home/>}></Route>
