@@ -9,11 +9,11 @@
 
  ## Client side code .
 
- [https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Shihab2022](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Shihab2022)
+ [https://github.com/Shihab2022/manufacturer-website-client](https://github.com/Shihab2022/manufacturer-website-client)
  
- ## Client side code .
+ ## Server side code .
 
- [https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Shihab2022](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Shihab2022)
+ [https://github.com/Shihab2022/manufacturer-website-server](https://github.com/Shihab2022/manufacturer-website-server)
 
 
 ### Five features
