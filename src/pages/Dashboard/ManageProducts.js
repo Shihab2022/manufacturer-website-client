@@ -72,7 +72,7 @@ const ManageProducts = () => {
             {/* <!-- row 1 --> */}
             {
                 products?.map((product,index)=>
-                    <tr key={index}>
+                    <tr data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index}>
                     <th>
                       {index+1}
                     </th>
@@ -103,7 +103,7 @@ const ManageProducts = () => {
 {/* for mobile device */}
         <div className='block md:hidden px-2'>
 { products?.map((product,index)=>
-<div key={index} class="card   my-5 rounded-md bg-zinc-200 shadow-lg shadow-amber-50">
+<div data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index} class="card   my-5 rounded-md bg-zinc-200 shadow-lg shadow-amber-50">
   <div class="card-body ">
   
  <div className='flex justify-between mb-3 items-center'>

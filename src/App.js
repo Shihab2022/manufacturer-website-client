@@ -22,13 +22,20 @@ import ManageProducts from './pages/Dashboard/ManageProducts';
 import Blog from './Blog/Blog';
 import Payment from './pages/Dashboard/Payment';
 import Portfolio from './portfolio/Portfolio';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(()=>{
+    AOS.init({
+      duration: 1200,
+      delay: 100,
+    });
+  },[])
   return (
     <div >
      <Navbar></Navbar>
-    {/* <NewTest></NewTest> */}
      <Routes>
        <Route path='/' element={<Home/>}></Route>
        <Route path='/home' element={<Home/>}></Route>

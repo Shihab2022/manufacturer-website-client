@@ -47,7 +47,7 @@ const Register = () => {
           <span className="label-text">Name</span>
         </label>
         <input
-         
+         data-aos="fade-right"
           type="text"
           placeholder="Your Name"
           className="input input-bordered w-full  max-w-lg"
@@ -74,7 +74,7 @@ const Register = () => {
           <span className="label-text">Email</span>
         </label>
         <input
-         
+         data-aos="fade-left"
           type="email"
           placeholder="Your Email"
           className="input input-bordered w-full  max-w-lg"
@@ -101,7 +101,7 @@ const Register = () => {
           <span className="label-text">Password</span>
         </label>
         <input
-         
+         data-aos="fade-right"
           type="password"
           placeholder="Your Password"
           className="input input-bordered w-full max-w-lg "
@@ -124,7 +124,7 @@ const Register = () => {
         </label>
 {userError}
     
-        <input className="btn  bg-[#002341] text-center w-full" type="submit" value="Register" />
+        <input data-aos="fade-left" className="btn  bg-[#002341] text-center w-full" type="submit" value="Register" />
       </form>
 
       <div className="divider">OR</div>
@@ -133,7 +133,7 @@ const Register = () => {
           <button className="text-sm text-red-500 hover:underline">Reset Password</button>
       </div>
       <p></p>
-      <button onClick={() =>signInWithGoogle()} className='w-full btn btn-outline btn-accent'>Continue with google</button>
+      <button  onClick={() =>signInWithGoogle()} className='w-full btn btn-outline btn-accent'>Continue with google</button>
   </div>
 </div>
 

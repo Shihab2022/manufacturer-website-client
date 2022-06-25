@@ -26,11 +26,10 @@ const GetReview = () => {
     // console.log('Success:', data);
   })
     e.preventDefault();
-    console.log(review)
   }
     return (
-        <div className='h-screen bg-zinc-300 px-3 flex justify-center items-center'>
-          <div className="card w-96 bg-base-100 shadow-orange-400 shadow-2xl">
+        <div  className='h-screen bg-zinc-300 px-3 flex justify-center items-center'>
+          <div data-aos="flip-up" className="card w-96 bg-base-100 shadow-orange-400 shadow-2xl">
   <div className="card-body">
   <form onSubmit={handleReview}>
   <input type="text"  name='name' value={user?.displayName} disabled className="input input-bordered w-full max-w-xs" />

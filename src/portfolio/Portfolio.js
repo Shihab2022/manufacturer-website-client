@@ -11,6 +11,7 @@ const Portfolio = () => {
             <h1 className='text-xl lg:text-3xl font-bold'>
             Web Skill:         <span className='text-amber-400 text-xl lg:text-2xl '>HTML , CSS , Javascript , React ,Firebase ,Tailwind CSS ,Boostrap ,React Boostrap , MongoDB  </span></h1> 
         
+        <h1 className='text-xl lg:text-3xl font-bold my-3'>Portfolio  : <span className='text-xl text-amber-600'>https://shihab-uddin-48ccf.web.app/</span></h1>
         <h1 className='text-xl lg:text-3xl font-bold my-3'>Website One  : <span className='text-xl text-amber-600'>https://royal-cars-client.web.app/</span></h1>
         <h1 className='text-xl lg:text-3xl font-bold my-3'>Website Two  : <span className='text-xl text-amber-600'>https://kubb-photography.web.app/</span></h1>
         <h1 className='text-xl lg:text-3xl font-bold my-3'>Website Three  : <span className='text-xl text-amber-600'>https://leafy-syrniki-f755ce.netlify.app/</span></h1>

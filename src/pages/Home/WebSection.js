@@ -8,24 +8,24 @@ const WebSection = () => {
     return (
         <div className="hero py-14 bg-base-500">
   <div className="hero-content flex-col lg:px-10 lg:flex-row-reverse">
-    <img src={web} alt='' className='lg:my-0 my-5'  />
+    <img data-aos="fade-down-left" src={web} alt='' className='lg:my-0 my-5'  />
     <div>
 
-      <div className='flex justify-between'>
+      <div data-aos="fade-down-right" className='flex justify-between'>
           <img src={google} className='border-2 border-zinc-300 p-3 h-20 w-20 rounded-full hover:shadow-lg' alt="" />
           <div className='ml-5'>
               <h1 className='font-bold '>GOOGLE RICH SNNIPPPET</h1>
               <p className='text-sm text-zinc-500'>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
           </div>
       </div>
-      <div className='flex justify-between my-8'>
+      <div data-aos="fade-right" className='flex justify-between my-8'>
           <img src={seo} className='border-2 border-zinc-300 p-3 h-20 w-20 rounded-full hover:shadow-lg' alt="" />
           <div className='ml-5'>
               <h1 className='font-bold '>SEO OPTIMIZED</h1>
               <p className='text-sm text-zinc-500'>Et harum quidem rerum facilis est et expedita disti namelia libero tempore cum soluta nobis est.</p>
           </div>
       </div>
-      <div className='flex justify-between'>
+      <div data-aos="fade-down-right" className='flex justify-between'>
           <img src={browser} className='border-2 border-zinc-300 p-3 h-20 w-20 rounded-full hover:shadow-lg' alt="" />
           <div className='ml-5'>
               <h1 className='font-bold '>COMPATIBLE WITH ALL BROWSERS</h1>

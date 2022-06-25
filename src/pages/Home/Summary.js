@@ -8,12 +8,12 @@ const Summary = () => {
     <>
   
       <div className=" flex flex-col justify-center items-center  w-screen">
-        <div className="flex flex-col justify-center  items-center pt-10">
+        <div data-aos="fade-up" className="flex flex-col justify-center  items-center pt-10">
           <h1 className="lg:text-4xl text-2xl font-bold  ">MILLION <span className="text-amber-600"> COMPANY</span> TRUST US</h1>
           <p className="my-3">TRY TO UNDERSTAND YOUR EXPECTATION</p>
         </div>
 
-        <div className="grid lg:grid-cols-4 grid-cols-1 text-2xl py-14 gap-5 px-5  lg:px-32 ">
+        <div data-aos="fade-up" className="grid lg:grid-cols-4 grid-cols-1 text-2xl py-14 gap-5 px-5  lg:px-32 ">
           <div className="flex flex-col  justify-center items-center">
          
              <img src={th} alt="" />
@@ -21,22 +21,22 @@ const Summary = () => {
             <p className=" font-bold mt-3">76</p>
             <p className=" font-extrabold  text-[#427eb3]">Countries</p>
           </div>
-          <div className="flex flex-col justify-center items-center">
+          <div data-aos="fade-down" className="flex flex-col justify-center items-center">
         
-              <img src={th1} className='h-[140px]' alt="" />
+              <img  src={th1} className='h-[140px]' alt="" />
             
             <p className="font-bold mt-3">353+</p>
             <p className="font-extrabold  text-[#427eb3]">Happy Clients</p>
           </div>
-          <div className="flex flex-col justify-center items-center">
+          <div data-aos="fade-up" className="flex flex-col justify-center items-center">
          
              
-              <img src={mark} alt="" />
+              <img  src={mark} alt="" />
            
             <p className="font-bold mt-3">543+</p>
             <p className="font-extrabold  text-[#427eb3]">Complete Order</p>
           </div>
-          <div className="flex flex-col justify-center items-center">
+          <div data-aos="fade-down" className="flex flex-col justify-center items-center">
            
              
               <img src={like} alt="" />

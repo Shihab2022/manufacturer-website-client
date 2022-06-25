@@ -20,7 +20,7 @@ const Tools = () => {
         <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 gap-5 lg:px-40 px-5 lg:py-10">
 
             {
-                tools.map(tool=><Tool key={tool._id} tool={tool}></Tool>)
+                tools.map((tool,index)=><Tool key={tool._id} index={index} tool={tool}></Tool>)
             }
         </div>
       </div>

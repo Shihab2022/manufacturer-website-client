@@ -18,10 +18,10 @@ const ToolDetails = () => {
   
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 px-5 py-5 lg:px-32 justify-center items-center'>
-            <div>
+            <div data-aos="fade-down-right">
                 <img src={img} alt="" />
             </div>
-            <div>
+            <div data-aos="fade-down-left">
                 <h2 className='text-3xl font-bold text-[#002341]'>{name}</h2>
                
                 <p className='text-2xl '>Minimum Order : <span className='font-semibold text-amber-600'>{miniQuantity}</span></p>

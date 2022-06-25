@@ -67,6 +67,7 @@ const AddProduct = () => {
     >
       <div className="container flex justify-center items-center lg:h-screen mx-auto ">
         <form
+         data-aos="zoom-in"
           onSubmit={handleAddProduct}
           className="lg:w-1/2 mx-3 shadow-lg shadow-yellow-600 rounded-md py-5 px-4"
         >

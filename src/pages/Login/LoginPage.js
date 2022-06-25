@@ -64,6 +64,7 @@ signInWithEmailAndPassword(data.email, data.password);
             </label>
             {/* onBlur={(e)=>setYourEmail(e.target.value)} */}
             <input
+            data-aos="fade-right"
               type="email"
               placeholder="Your Email"
               className="input input-bordered w-full max-w-lg "
@@ -95,6 +96,7 @@ signInWithEmailAndPassword(data.email, data.password);
               <span className="label-text">Password</span>
             </label>
             <input
+            data-aos="fade-left"
               type="password"
               placeholder="Your Password"
               className="input input-bordered w-full max-w-lg "
@@ -124,6 +126,7 @@ signInWithEmailAndPassword(data.email, data.password);
 
             {userError}
             <input
+            data-aos="fade-right"
               className="btn bg-[#002341] text-center w-full"
               type="submit"
               value="Login"
@@ -148,6 +151,7 @@ signInWithEmailAndPassword(data.email, data.password);
 
           <p></p>
           <button
+          data-aos="fade-left"
             onClick={() => signInWithGoogle()}
             className="w-full btn btn-outline btn-accent"
           >

@@ -63,7 +63,7 @@ const MakeAdmin = () => {
           <tbody>
             {/* <!-- row 1 --> */}
             {users?.map((user, index) => (
-              <tr key={index}>
+              <tr data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index}>
                 <th>{index + 1}</th>
                 <td>{user?.name} </td>
                 <td>{user?.email} </td>
@@ -89,7 +89,7 @@ const MakeAdmin = () => {
      {users?.map((user, index) => (
 
 
-<div key={index} class="card   my-5 rounded-md bg-zinc-300 shadow-lg shadow-amber-50">
+<div data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index} class="card   my-5 rounded-md bg-zinc-300 shadow-lg shadow-amber-50">
   <div class="card-body ">
    <div className='flex justify-between'>
      <p className='text-amber-800'>#{index + 1}</p>

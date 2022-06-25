@@ -13,6 +13,8 @@ const Review = () => {
   }, [reviews]);
   return (
     <div
+    data-aos="fade-right"
+    data-aos-duration="2000"
       style={{ backgroundImage: `url(${parralex})` }}
       className=" flex justify-center flex-col items-center w-screen"
     >
