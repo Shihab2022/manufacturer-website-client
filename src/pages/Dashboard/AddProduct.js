@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import bgProducts from "../../assets/img/bgProducts.jpg";
+import bgProducts from "../../assets/img/bgProducts.webp";
 import Loading from "../../components/Loading";
 const AddProduct = () => {
     const [loading,setLoading]=useState(null)

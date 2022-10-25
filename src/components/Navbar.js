@@ -2,7 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
-import logo from "../assets/icon/logo.png";
+import logo from "../assets/icon/logo.webp";
 import auth from "../firebase.init";
 import Loading from "./Loading";
 

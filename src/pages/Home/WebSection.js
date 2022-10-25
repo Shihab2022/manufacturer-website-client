@@ -1,8 +1,8 @@
 import React from 'react';
-import web from '../../assets/img/web.png'
-import google from '../../assets/icon/google.png'
-import seo from '../../assets/icon/seo.png'
-import browser from '../../assets/icon/browser.png'
+import web from '../../assets/img/web.webp'
+import google from '../../assets/icon/google.webp'
+import seo from '../../assets/icon/seo.webp'
+import browser from '../../assets/icon/browser.webp'
 const WebSection = () => {
     // min-h-screen 
     return (

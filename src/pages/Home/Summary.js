@@ -1,8 +1,8 @@
 import React from "react";
-import th from '../../assets/icon/th.png'
-import th1 from '../../assets/icon/th1.png'
-import like from '../../assets/icon/like.png'
-import mark from '../../assets/icon/mark.png'
+import th from '../../assets/icon/th.webp'
+import th1 from '../../assets/icon/th1.webp'
+import like from '../../assets/icon/like.webp'
+import mark from '../../assets/icon/mark.webp'
 const Summary = () => {
   return (
     <>

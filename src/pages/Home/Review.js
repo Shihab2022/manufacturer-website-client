@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import parralex from "../../assets/img/parralex.jpg";
+import parralex from "../../assets/img/parralex.webp";
 import {  FaStar } from "react-icons/fa";
 import {  RiDoubleQuotesL ,RiDoubleQuotesR} from "react-icons/ri";
 

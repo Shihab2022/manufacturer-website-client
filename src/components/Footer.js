@@ -1,5 +1,5 @@
 import React from 'react';
-import footerImg from '../assets/img/footerImg.png'
+import footerImg from '../assets/img/footerImg.webp'
 const Footer = () => {
     return (
         <div className='bg-[#002341]'>

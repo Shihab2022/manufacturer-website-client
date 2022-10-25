@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import bgProducts from "../../assets/img/bgProducts.jpg";
+import bgProducts from "../../assets/img/bgProducts.webp";
 import Tool from "./Tool";
 const Tools = () => {
   const [tools, setTools] = useState([]);

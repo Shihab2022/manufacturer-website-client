@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import bgProducts from "../../assets/img/bgProducts.jpg";
+import bgProducts from "../../assets/img/bgProducts.webp";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,

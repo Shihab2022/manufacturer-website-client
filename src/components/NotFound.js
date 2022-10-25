@@ -1,5 +1,5 @@
 import React from 'react';
-import erorPage from '../assets/img/erorPage.png'
+import erorPage from '../assets/img/erorPage.webp'
 const NotFound = () => {
     return (
         <div>

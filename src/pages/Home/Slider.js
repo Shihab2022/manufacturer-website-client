@@ -1,10 +1,10 @@
 import React from "react";
-import slider1 from "../../assets/img/slider1.jpg";
-import slide2 from "../../assets/img/slide2.png";
-import bg1 from "../../assets/img/bg1.jpg";
-import image1 from "../../assets/img/image1.jpg";
-import image2 from "../../assets/img/image2.jpg";
-import image3 from "../../assets/img/image3.jpg";
+import slider1 from "../../assets/img/slider1.webp";
+import slide2 from "../../assets/img/slide2.webp";
+import bg1 from "../../assets/img/bg1.webp";
+import image1 from "../../assets/img/image1.webp";
+import image2 from "../../assets/img/image2.webp";
+import image3 from "../../assets/img/image3.webp";
 
 
 const Slider = () => {
@@ -15,7 +15,7 @@ const Slider = () => {
     <>
       <div
         style={{ backgroundImage: `url(${slider1})` }}
-        className="h-screen relative w-screen"
+        className="lg:h-screen h-4/6 relative w-screen"
       >
         <div  className="flex lg:flex-row flex-col justify-around items-center">
           <div  className="lg:mt-0 mt-14">
@@ -27,7 +27,11 @@ const Slider = () => {
               BETTER BLOWER QUIENTLY CLEARS WAY
             </h1>
           </div>
-            <img  className="mt-8 h-5/6" src={slide2} alt="" />
+            <img data-default-width="450"
+              height="100"
+              width='550'
+              data-default-height="100"
+             className="mt-8 " src={slide2} alt="" />
         </div>
       </div>
 
@@ -58,7 +62,7 @@ const Slider = () => {
              <img 
              data-aos="fade-up-left" 
              data-aos-duration="1500"
-             className=" lg:h-[250px]"
+             className=" lg:h-64"
               src={image2} alt="" />
          
              <h1  
@@ -73,7 +77,7 @@ const Slider = () => {
              </div>
              <div  data-aos="fade-up-left" className="relative">
              <img
-              className=" lg:h-[250px]" 
+              className=" lg:h-64" 
               src={image3} alt="" />
               <h1 
                  data-aos="fade-left"  
