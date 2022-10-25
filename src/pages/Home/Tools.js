@@ -13,6 +13,10 @@ const Tools = () => {
   return (
     <>
       <div
+       data-default-width="450"
+       height="260"
+       width='100%'
+       data-default-height="100"
         style={{ backgroundImage: `url(${bgProducts})` }}
         className=" relative w-screen px-5 py-5"
       >

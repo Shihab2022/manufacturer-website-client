@@ -14,7 +14,11 @@ const Slider = () => {
   return (
     <>
       <div
-        style={{ backgroundImage: `url(${slider1})` }}
+      data-default-width="450"
+      height="100"
+      width='550'
+      data-default-height="100"
+        style={{ backgroundImage: `url('https://i.ibb.co/gvnPLNg/slider1.webp')` }}
         className="lg:h-screen h-4/6 relative w-screen"
       >
         <div  className="flex lg:flex-row flex-col justify-around items-center">
@@ -36,14 +40,19 @@ const Slider = () => {
       </div>
 
       <div
-        style={{ backgroundImage: `url(${bg1})` }}
+      
+        style={{ backgroundImage: `url('https://i.ibb.co/b1pGYpd/bg1.webp')` }}
         className="h-[70vh] w-screen lg:block hidden"
       >
         <div className="absolute mt-[-150px] lg:ml-40">
           <div className="flex lg:flex-row flex-col justify-center h-[90%]   items-center">
             <div  data-aos="fade-down-right" className="lg-w-[600px] relative ">
             <img 
-            className=" lg:h-[500px] w-full" 
+            data-default-width="450"
+            height="100"
+            width='480'
+            data-default-height="100"
+            className="w-full" 
            src={image1} alt="" />
           <h1 
       data-aos="fade-right"   
@@ -63,6 +72,11 @@ const Slider = () => {
              data-aos="fade-up-left" 
              data-aos-duration="1500"
              className=" lg:h-64"
+             
+             data-default-width="450"
+              height="260"
+              width='100%'
+              data-default-height="100"
               src={image2} alt="" />
          
              <h1  
@@ -77,6 +91,10 @@ const Slider = () => {
              </div>
              <div  data-aos="fade-up-left" className="relative">
              <img
+                 data-default-width="450"
+                 height="260"
+                 width='100%'
+                 data-default-height="100"
               className=" lg:h-64" 
               src={image3} alt="" />
               <h1 
