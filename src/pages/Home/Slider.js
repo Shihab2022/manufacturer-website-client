@@ -5,6 +5,9 @@ import bg1 from "../../assets/img/bg1.webp";
 import image1 from "../../assets/img/image1.webp";
 import image2 from "../../assets/img/image2.webp";
 import image3 from "../../assets/img/image3.webp";
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 
 const Slider = () => {
@@ -19,7 +22,8 @@ const Slider = () => {
       width='550'
       data-default-height="100"
         style={{ backgroundImage: `url(${slider1})` }}
-        className="lg:h-screen h-4/6 relative w-screen"
+        className="lg:h-screen h-4/6 relative w-screen "
+        class="lazyload"
       >
         <div  className="flex lg:flex-row flex-col justify-around items-center">
           <div  className="lg:mt-0 mt-14">
@@ -35,7 +39,7 @@ const Slider = () => {
               height="100"
               width='550'
               data-default-height="100"
-             className="mt-8 " src={slide2} alt="" />
+             className="mt-8 " src={slide2}  class="lazyload" alt="" />
         </div>
       </div>
 
@@ -43,6 +47,7 @@ const Slider = () => {
       
         style={{ backgroundImage: `url('${bg1}')` }}
         className="h-[70vh] w-screen lg:block hidden"
+        class="lazyload"
       >
         <div className="absolute mt-[-150px] lg:ml-40">
           <div className="flex lg:flex-row flex-col justify-center h-[90%]   items-center">
@@ -53,7 +58,7 @@ const Slider = () => {
             width='480'
             data-default-height="100"
             className="w-full" 
-           src={image1} alt="" />
+           src={image1} class="lazyload" alt="" />
           <h1 
       data-aos="fade-right"   
        className="text-7xl  absolute left-10 mt-10  top-0 text-green-400  font-extrabold">
@@ -77,7 +82,7 @@ const Slider = () => {
               height="260"
               width='100%'
               data-default-height="100"
-              src={image2} alt="" />
+              src={image2} class="lazyload" alt="" />
          
              <h1  
       
@@ -96,7 +101,7 @@ const Slider = () => {
                  width='100%'
                  data-default-height="100"
               className=" lg:h-64" 
-              src={image3} alt="" />
+              src={image3} class="lazyload" alt="" />
               <h1 
                  data-aos="fade-left"  
                  className="text-4xl  absolute  left-60 mt-14  top-0 text-yellow-400 font-extrabold">
