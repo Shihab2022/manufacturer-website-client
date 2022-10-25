@@ -63,6 +63,7 @@ const AddProduct = () => {
   return (
     <div
       className="hero min-h-screen"
+      
       style={{ backgroundImage: `url(${bgProducts})` }}
     >
       <div className="container flex justify-center items-center lg:h-screen mx-auto ">

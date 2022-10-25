@@ -15,8 +15,12 @@ const Review = () => {
     <div
     data-aos="fade-right"
     data-aos-duration="2000"
+    data-default-width="450"
+      height="100"
+      width='100vh'
+      data-default-height="100"
       style={{ backgroundImage: `url(${parralex})` }}
-      className=" flex justify-center flex-col items-center w-screen"
+      className=" flex justify-center flex-col items-center "
     >
         <h1 className="lg:text-4xl text-2xl font-bold  text-amber-500 mt-14">OUR CUSTOMER REVIEWS</h1>
       <div className="carousel w-full  lg:py-10">
