@@ -7,7 +7,7 @@ const Footer = () => {
  
  <div>
    <span className="footer-title">Services</span> 
-   <a href='/' className="link link-hover">Branding</a> 
+   <a  className="link link-hover">Branding</a> 
    <a className="link link-hover">Design</a> 
    <a className="link link-hover">Marketing</a> 
    <a className="link link-hover">Advertisement</a>
@@ -27,7 +27,10 @@ const Footer = () => {
  </div>
  <div>
 
-   <img src={footerImg} alt="" />
+   <img  data-default-width="450"
+      height="100"
+      width='300'
+      data-default-height="100" src={footerImg} alt="" />
    
  </div> 
 </footer>

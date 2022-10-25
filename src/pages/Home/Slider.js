@@ -18,7 +18,7 @@ const Slider = () => {
       height="100"
       width='550'
       data-default-height="100"
-        style={{ backgroundImage: `url('https://i.ibb.co/gvnPLNg/slider1.webp')` }}
+        style={{ backgroundImage: `url(${slider1})` }}
         className="lg:h-screen h-4/6 relative w-screen"
       >
         <div  className="flex lg:flex-row flex-col justify-around items-center">
@@ -41,7 +41,7 @@ const Slider = () => {
 
       <div
       
-        style={{ backgroundImage: `url('https://i.ibb.co/b1pGYpd/bg1.webp')` }}
+        style={{ backgroundImage: `url('${bg1}')` }}
         className="h-[70vh] w-screen lg:block hidden"
       >
         <div className="absolute mt-[-150px] lg:ml-40">
