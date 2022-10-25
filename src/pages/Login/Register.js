@@ -41,7 +41,7 @@ const Register = () => {
         <div style={{ backgroundImage: `url(${bgProducts})` }} className="flex justify-center h-screen items-center">
         <div className="card shadow-2xl shadow-blue-500 w-4/12 ">
   <div className="card-body ">
-   <h1 className="text-3xl font-bold text-center uppercase text-[#002341]">Register </h1>
+   <h1 className="text-3xl font-bold text-center uppercase text-sky-900">Register </h1>
   <form onSubmit={handleSubmit(onSubmit)}>
   <label className="label">
           <span className="label-text">Name</span>
@@ -124,7 +124,7 @@ const Register = () => {
         </label>
 {userError}
     
-        <input data-aos="fade-left" className="btn  bg-[#002341] text-center w-full" type="submit" value="Register" />
+        <input data-aos="fade-left" className="btn  bg-sky-900 text-center w-full" type="submit" value="Register" />
       </form>
 
       <div className="divider">OR</div>

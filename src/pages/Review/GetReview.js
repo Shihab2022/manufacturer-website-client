@@ -23,7 +23,6 @@ const GetReview = () => {
       .then((response) => response.json())
       .then((data) => {
         toast.success("Thank you for getting review .");
-        // console.log('Success:', data);
       });
     e.preventDefault();
   };
@@ -65,7 +64,7 @@ const GetReview = () => {
             <input
               type="submit"
               placeholder="Type here"
-              className="input text-white text-xl mt-3 bg-[#002341] input-bordered w-full max-w-xs"
+              className="input text-white text-xl mt-3 bg-sky-900 input-bordered w-full max-w-xs"
             />
           </form>
         </div>

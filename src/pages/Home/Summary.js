@@ -19,14 +19,14 @@ const Summary = () => {
              <img src={th} alt="" />
        
             <p className=" font-bold mt-3">76</p>
-            <p className=" font-extrabold  text-[#427eb3]">Countries</p>
+            <p className=" font-extrabold  text-sky-900">Countries</p>
           </div>
-          <div data-aos="fade-down" className="flex flex-col justify-center items-center">
+          <div data-aos="fade-down" className="flex  flex-col justify-center items-center">
         
               <img  src={th1} className='h-[140px]' alt="" />
             
             <p className="font-bold mt-3">353+</p>
-            <p className="font-extrabold  text-[#427eb3]">Happy Clients</p>
+            <p className="font-extrabold  text-sky-900">Happy Clients</p>
           </div>
           <div data-aos="fade-up" className="flex flex-col justify-center items-center">
          
@@ -34,7 +34,7 @@ const Summary = () => {
               <img  src={mark} alt="" />
            
             <p className="font-bold mt-3">543+</p>
-            <p className="font-extrabold  text-[#427eb3]">Complete Order</p>
+            <p className="font-extrabold  text-sky-900">Complete Order</p>
           </div>
           <div data-aos="fade-down" className="flex flex-col justify-center items-center">
            
@@ -42,7 +42,7 @@ const Summary = () => {
               <img src={like} alt="" />
             
             <p className="font-bold mt-3">483+</p>
-            <p className="font-extrabold  text-[#427eb3]">Feedback</p>
+            <p className="font-extrabold  text-sky-900">Feedback</p>
           </div>
         </div>
       </div>

@@ -55,7 +55,7 @@ signInWithEmailAndPassword(data.email, data.password);
       <div className="card shadow-2xl shadow-blue-500 w-full lg:w-4/12 ">
         <div className="card-body ">
           {/* <img src={logo} className='w-28 bg-slate-300' alt="" /> */}
-          <h1 className="text-3xl font-bold text-center uppercase text-[#002341]">
+          <h1 className="text-3xl font-bold text-center uppercase text-sky-900">
             login{" "}
           </h1>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -127,13 +127,13 @@ signInWithEmailAndPassword(data.email, data.password);
             {userError}
             <input
             data-aos="fade-right"
-              className="btn bg-[#002341] text-center w-full"
+              className="btn bg-sky-900 text-center w-full"
               type="submit"
               value="Login"
             />
           </form>
 
-          <div className="divider">OR</div>
+          <div className="divider ">OR</div>
           <div className="flex justify-between mb-1">
             <p className="text-sm">
               Don't have an account?{" "}

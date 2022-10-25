@@ -15,10 +15,10 @@ const Slider = () => {
     <>
       <div
         style={{ backgroundImage: `url(${slider1})` }}
-        className="h-[95vh] relative w-screen"
+        className="h-screen relative w-screen"
       >
         <div  className="flex lg:flex-row flex-col justify-around items-center">
-          <div data-aos="fade-down" className="lg:mt-0 mt-14">
+          <div  className="lg:mt-0 mt-14">
             <h1 className="text-xl font-bold text-white">Products</h1>
             <h1 className="lg:text-9xl text-5xl font-bold ml-0 text-white">
               DPB-600
@@ -27,14 +27,11 @@ const Slider = () => {
               BETTER BLOWER QUIENTLY CLEARS WAY
             </h1>
           </div>
-          <div>
-            <img data-aos="fade-up" className="mt-8 h-[80%]" src={slide2} alt="" />
-          </div>
+            <img  className="mt-8 h-5/6" src={slide2} alt="" />
         </div>
       </div>
 
       <div
-      data-aos="fade-up"
         style={{ backgroundImage: `url(${bg1})` }}
         className="h-[70vh] w-screen lg:block hidden"
       >
@@ -46,11 +43,11 @@ const Slider = () => {
            src={image1} alt="" />
           <h1 
       data-aos="fade-right"   
-       className="text-7xl  absolute left-10 mt-10  top-0 text-[#62c72d]  font-extrabold">
+       className="text-7xl  absolute left-10 mt-10  top-0 text-green-400  font-extrabold">
          Power Beyond Bellef</h1>
             <h1
               data-aos="fade-right"   
-              className="text-3xl  absolute left-10 mt-24 top-28 text-white font-bold">
+              className="text-3xl  absolute left-10 mt-24  top-28 text-white font-bold">
                 Performance of gas without the noise, <br />  fuss & fumes </h1>
         
             </div>
@@ -67,7 +64,7 @@ const Slider = () => {
              <h1  
       
                data-aos="fade-left" 
-                className="text-7xl  absolute left-10 mt-10  top-0 text-[#ffdc18] font-extrabold"> Hepa</h1>
+                className="text-7xl  absolute left-10 mt-10  top-0 text-yellow-400 font-extrabold"> Hepa</h1>
             <h1 
         
              data-aos="fade-left"
@@ -80,7 +77,7 @@ const Slider = () => {
               src={image3} alt="" />
               <h1 
                  data-aos="fade-left"  
-                 className="text-4xl  absolute  left-60 mt-14  top-0 text-[#ffdc18] font-extrabold">
+                 className="text-4xl  absolute  left-60 mt-14  top-0 text-yellow-400 font-extrabold">
                     Festool Installers Set</h1>
             <h1
                data-aos="fade-left"

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 // import { useForm } from "react-hook-form";
@@ -39,7 +39,7 @@ const handelSubmit=e=>{
 
   fetch('https://frozen-badlands-14934.herokuapp.com/order', {
   // fetch('http://localhost:5000/order', {
-    method: 'POST', // or 'PUT'
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -49,14 +49,10 @@ const handelSubmit=e=>{
   .then(data => {
     navigate('/dashboard')
     toast.success(`Please payment $ ${pay}`)
-    // console.log('Success:', data);
   })
 
-
-// console.log(userInfo)
 e.preventDefault();
 }
-// console.log(`${parseFloat(quantity)*parseFloat(price)}`)
     return (
         <div>
 <input type="checkbox" id="tool-modal" className="modal-toggle" />
@@ -120,5 +116,3 @@ e.preventDefault();
 };
 
 export default ToolModal;
-
-// onFocus={(e)=>e.target.value=null} value='213'
