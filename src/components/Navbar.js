@@ -48,7 +48,10 @@ const NewTest = () => {
             
             <div>
               <NavLink to="/" href="#" className="flex items-center py-4 px-2">
-                <img src={logo} alt="Logo" className="h-8 w-28 mr-2" />
+                <img data-default-width="450"
+                 height="260"
+                 width='100%'
+                 data-default-height="100" src={logo} alt="Logo" className="h-8 w-28 mr-2" />
               </NavLink>
             </div>
 
