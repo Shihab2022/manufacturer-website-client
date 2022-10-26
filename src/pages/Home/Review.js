@@ -34,7 +34,7 @@ const Review = () => {
               </div>
               <p className="lg:w-1/2 w-3/4 mt-3 font-semibold inline-block"><span className="text-2xl text-amber-500 inline-block mr-2"><RiDoubleQuotesL /></span> {review.about}
               <span className="text-2xl text-amber-500 inline-block ml-2"><RiDoubleQuotesR /></span></p>
-              <h4 className="text-2xl font-bold mt-8 text-white ">{review?.name}</h4>
+              <h1 className="text-2xl font-bold mt-8 text-white ">{review?.name}</h1>
               <div className="flex text-yellow-500 justify-around mt-1">
             <FaStar />
             <FaStar />

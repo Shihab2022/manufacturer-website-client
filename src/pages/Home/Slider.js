@@ -40,7 +40,7 @@ const Slider = () => {
               height="100"
               width='550'
               data-default-height="100"
-             className="mt-8 " src={slide2}   alt="slider " />
+             className="mt-8  " src={slide2}   alt="slider " />
         </div>
       </div>
 

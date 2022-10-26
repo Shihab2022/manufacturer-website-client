@@ -4,33 +4,9 @@ import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'aos/dist/aos.css';
-
-
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-
-
-// import NotFound from './components/NotFound';
-// import Home from './pages/Home/Home';
-// import ToolDetails from './pages/Home/ToolDetails';
-// import LoginPage from './pages/Login/LoginPage';
-// import Register from './pages/Login/Register';
-
-// import GetReview from './pages/Review/GetReview';
-// import Dashboard from './pages/Dashboard/Dashboard';
-// import MyProfile from './pages/Dashboard/MyProfile';
-// import MyOrders from './pages/Dashboard/MyOrders';
-// import AddReview from './pages/Dashboard/AddReview';
-// import RequireAuth from './components/RequareAuth';
-// import AllOrders from './pages/Dashboard/AllOrders';
-// import AddProduct from './pages/Dashboard/AddProduct';
-// import MakeAdmin from './pages/Dashboard/MakeAdmin';
-// import ManageProducts from './pages/Dashboard/ManageProducts';
-// import Blog from './Blog/Blog';
-// import Payment from './pages/Dashboard/Payment';
-// import Portfolio from './portfolio/Portfolio';
 import AOS from 'aos';
-// import Loading from './components/Loading';
 
 const NotFound = React.lazy(() => import('./components/NotFound'));
 const Home = React.lazy(() => import('./pages/Home/Home'));
