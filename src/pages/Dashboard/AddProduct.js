@@ -94,7 +94,7 @@ const AddProduct = () => {
           </div>
           <div className="p-3">
             <input
-              className="input input-bordered input-warning w-[48%]  "
+              className="input input-bordered input-warning w-1/2  "
               type="number"
               name='miniQuantity'
               placeholder="Minimum Quantity"
@@ -102,7 +102,7 @@ const AddProduct = () => {
             />
 
             <input
-              className="input input-bordered input-warning w-[48%] ml-[4%] "
+              className="input input-bordered input-warning w-1/2 ml-[4%] "
               type="number"
               name='aviQuantity'
               placeholder="Available  Quantity"
@@ -111,14 +111,14 @@ const AddProduct = () => {
           </div>
           <div className="p-3">
             <input
-              className="input input-bordered input-warning w-[48%]  "
+              className="input input-bordered input-warning w-1/2  "
               type="file"
               name='photo'
               required
             />
 
             <input
-              className="input input-bordered input-warning w-[48%] ml-[4%] "
+              className="input input-bordered input-warning w-1/2 ml-[4%] "
               type="number"
               name='price'
               placeholder="Product Price"
@@ -127,7 +127,7 @@ const AddProduct = () => {
           </div>
 
           <div className="flex justify-center">
-            <button className="w-1/2 bg-[#002341] uppercase text-white text-xl rounded-md  py-3">
+            <button className="w-1/2 bg-sky-900 uppercase text-white text-xl rounded-md  py-3">
               add
             </button>
           </div>

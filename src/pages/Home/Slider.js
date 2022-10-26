@@ -20,6 +20,7 @@ const Slider = () => {
       data-default-width="450"
       height="100"
       width='550'
+     
       data-default-height="100"
         style={{ backgroundImage: `url(${slider1})` }}
         className="lg:h-screen h-4/6 relative w-screen "

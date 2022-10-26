@@ -25,12 +25,12 @@ const NewTest = () => {
           <div className="flex space-x-7">
 
           { user && <div onClick={handleDashboard} className="md:hidden mr-10">
-          <input  type="checkbox" class="peer hidden" />
+          <input  type="checkbox" className="peer hidden" />
            
-           <label tabindex="0" for="my-drawer-2" class="btn btn-ghost btn-circle">
+           <label tabindex="0" for="my-drawer-2" className="btn btn-ghost btn-circle">
              <svg
                xmlns="http://www.w3.org/2000/svg"
-               class="h-8 w-8 mt-2"
+               className="h-8 w-8 mt-2"
                fill="none"
                viewBox="0 0 24 24"
                stroke="currentColor"
@@ -106,13 +106,13 @@ const NewTest = () => {
           {/* <!-- Mobile menu button --> */}
           <div className="md:hidden flex items-center">
             <div className="flex justify-end">
-              <div class="dropdown  dropdown-end">
-                <label tabindex="0"  class=" m-1">
+              <div className="dropdown  dropdown-end">
+                <label tabindex="0"  className=" m-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    class="inline-block w-8 h-8 stroke-current"
+                    className="inline-block w-8 h-8 stroke-current"
                   >
                     <path
                       stroke-linecap="round"
@@ -124,7 +124,7 @@ const NewTest = () => {
                 </label>
                 <ul
                   tabindex="0"
-                  class="dropdown-content menu p-2 mt-4 mr-0 
+                  className="dropdown-content menu p-2 mt-4 mr-0 
                   rounded-sm shadow bg-[#134068] text-xl font-semibold  w-60"
                 >
                   <li className="active">

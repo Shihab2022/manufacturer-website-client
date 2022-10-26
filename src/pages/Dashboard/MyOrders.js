@@ -102,8 +102,8 @@ const MyOrders = () => {
 
 <div className='block px-3 md:hidden'>
 {orders?.map((order, index) => (
-<div data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index} class="card   my-5 rounded-md bg-zinc-300 shadow-lg shadow-amber-50">
-  <div class="card-body ">
+<div data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index} className="card   my-5 rounded-md bg-zinc-300 shadow-lg shadow-amber-50">
+  <div className="card-body ">
    <div className='flex justify-between'>
      <p className='text-amber-800'>#{index + 1}</p>
      <p className='font-bold'>Quantity : {order?.quantity}</p>

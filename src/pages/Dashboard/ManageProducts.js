@@ -103,16 +103,16 @@ const ManageProducts = () => {
 {/* for mobile device */}
         <div className='block md:hidden px-2'>
 { products?.map((product,index)=>
-<div data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index} class="card   my-5 rounded-md bg-zinc-200 shadow-lg shadow-amber-50">
-  <div class="card-body ">
+<div data-aos={index%2===0 ?"fade-right" : "fade-left" } key={index} className="card   my-5 rounded-md bg-zinc-200 shadow-lg shadow-amber-50">
+  <div className="card-body ">
   
  <div className='flex justify-between mb-3 items-center'>
  <div>
    <p className='text-xl'> {product.name}</p>
     <p className='font-bold'>${product.price}</p>
    </div>
-   <div class="avatar">
-  <div class="w-20 rounded-xl">
+   <div className="avatar">
+  <div className="w-20 rounded-xl">
   <img src={product.img} alt="product img" />
   </div>
 </div>
