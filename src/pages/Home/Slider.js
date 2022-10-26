@@ -5,10 +5,6 @@ import bg1 from "../../assets/img/bg1.webp";
 import image1 from "../../assets/img/image1.webp";
 import image2 from "../../assets/img/image2.webp";
 import image3 from "../../assets/img/image3.webp";
-import 'lazysizes';
-// import a plugin
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-
 
 const Slider = () => {
 

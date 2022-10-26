@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {  useParams } from 'react-router-dom';
-import ToolModal from '../Modal/ToolModal'
+// import Loading from '../../components/Loading';
+// import ToolModal from '../Modal/ToolModal'
+const ToolModal = React.lazy(() => import('../Modal/ToolModal'));
+const Loading = React.lazy(() => import('../../components/Loading'));
+
 const ToolDetails = () => {
     const {toolId}=useParams()
-    // console.log(toolId)
     const [tool,setTool]=useState({})
     useEffect(()=>{
         const url=`https://frozen-badlands-14934.herokuapp.com/tools/${toolId}`
@@ -30,7 +33,9 @@ const ToolDetails = () => {
                 <h2 className='text-2xl my-3'>  <span className='font-semibold text-amber-600'>${price}</span></h2>
                 <label  for="tool-modal"  className='btn bg-[#002341] px-10'>Order</label>
             </div>
+            <React.Suspense  fallback={<Loading/>}>
             <ToolModal tool={tool}></ToolModal>
+            </React.Suspense>
         </div>
     );
 };
