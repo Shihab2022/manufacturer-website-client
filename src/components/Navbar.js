@@ -19,7 +19,7 @@ const NewTest = () => {
 
 
   return (
-    <nav className="bg-[#002341] text-white shadow-lg">
+    <nav className="bg-sky-900 text-white shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between">
           <div className="flex space-x-7">

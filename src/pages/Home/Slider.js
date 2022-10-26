@@ -39,7 +39,7 @@ const Slider = () => {
               height="100"
               width='550'
               data-default-height="100"
-             className="mt-8 " src={slide2}   alt="" />
+             className="mt-8 " src={slide2}   alt="slider " />
         </div>
       </div>
 
@@ -58,7 +58,7 @@ const Slider = () => {
             width='480'
             data-default-height="100"
             className="w-full" 
-           src={image1}  alt="" />
+           src={image1}  alt="power beyond bellef" />
           <h1 
       data-aos="fade-right"   
        className="text-7xl  absolute left-10 mt-10  top-0 text-green-400  font-extrabold">
@@ -79,10 +79,10 @@ const Slider = () => {
              className=" lg:h-64"
              
              data-default-width="450"
-              height="260"
-              width='100%'
+              height="280"
+              width='620'
               data-default-height="100"
-              src={image2}  alt="" />
+              src={image2}  alt="hepa" />
          
              <h1  
       
@@ -97,11 +97,11 @@ const Slider = () => {
              <div  data-aos="fade-up-left" className="relative">
              <img
                  data-default-width="450"
-                 height="260"
-                 width='100%'
+                 height="280"
+                 width='620'
                  data-default-height="100"
               className=" lg:h-64" 
-              src={image3} alt="" />
+              src={image3} alt="festool set" />
               <h1 
                  data-aos="fade-left"  
                  className="text-4xl  absolute  left-60 mt-14  top-0 text-yellow-400 font-extrabold">

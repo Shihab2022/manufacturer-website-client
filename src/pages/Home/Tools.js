@@ -14,11 +14,11 @@ const Tools = () => {
     <>
       <div
        data-default-width="450"
-       height="260"
+       height="100"
        width='100%'
        data-default-height="100"
         style={{ backgroundImage: `url(${bgProducts})` }}
-        className=" relative w-screen px-5 py-5"
+        className=" relative  px-5 py-5"
       >
           <h1 className="pt-5 text-cyan-900 text-center text-5xl py-5 font-bold">Our Products</h1>
         <div className="grid md:grid-cols-2  grid-cols-1 lg:grid-cols-3 gap-5 lg:px-40 px-5 lg:py-10">
