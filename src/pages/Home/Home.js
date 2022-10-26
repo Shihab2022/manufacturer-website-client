@@ -1,4 +1,5 @@
 import React from 'react';
+import AskQuestion from './AskQuestion';
 import Review from './Review';
 import Slider from './Slider';
 import Summary from './Summary';
@@ -12,7 +13,8 @@ const Home = () => {
             <Tools></Tools>
             <WebSection></WebSection>
             <Review></Review>
-            <Summary></Summary>
+            {/* <Summary></Summary> */}
+            <AskQuestion/>
         </div>
     );
 };
