@@ -14,7 +14,7 @@ const Payment = () => {
 
   console.log(orderId);
   // const url=`http://localhost:5000/paymentOrder/${orderId}`
-  const url = `https://frozen-badlands-14934.herokuapp.com/paymentOrder/${orderId}`;
+  const url = `https://allegro-server-production-4215.up.railway.app/paymentOrder/${orderId}`;
   const { data: order, isLoading } = useQuery(["order", orderId], () =>
     fetch(url, {
       method: "GET",

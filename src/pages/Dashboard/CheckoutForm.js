@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
 // console.log(_id)
   useEffect(() => {
     // fetch("http://localhost:5000/create-payment-intent", {
-    fetch("https://frozen-badlands-14934.herokuapp.com/create-payment-intent", {
+    fetch("https://allegro-server-production-4215.up.railway.app/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,7 +81,7 @@ const payment={
 }
 
 // fetch(`http://localhost:5000/create-payment-intent/${_id}`,{
-fetch(`https://frozen-badlands-14934.herokuapp.com/order/${_id}`,{
+fetch(`https://allegro-server-production-4215.up.railway.app/order/${_id}`,{
     method: "PATCH",
     headers: {
       "content-type": "application/json",

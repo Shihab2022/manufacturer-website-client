@@ -34,7 +34,7 @@ const ToolModal = ({ tool }) => {
       quantity: e.target.quantity.value,
     };
 
-    fetch("https://frozen-badlands-14934.herokuapp.com/order", {
+    fetch("https://allegro-server-production-4215.up.railway.app/order", {
       // fetch('http://localhost:5000/order', {
       method: "POST",
       headers: {

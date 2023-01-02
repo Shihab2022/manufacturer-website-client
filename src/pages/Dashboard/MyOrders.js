@@ -12,7 +12,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
   const Swal = require("sweetalert2");
   useEffect(() => {
-    const url = `https://frozen-badlands-14934.herokuapp.com/order/${user?.email}`;
+    const url = `https://allegro-server-production-4215.up.railway.app/order/${user?.email}`;
     // const url = `http://localhost:5000/order/${user?.email}`;
     fetch(url)
       .then((res) => res.json())
@@ -31,7 +31,7 @@ const MyOrders = () => {
       if (result.isConfirmed) {
         console.log(_id)
         // const url = `http://localhost:5000/order/${_id}`;
-        const url = `https://frozen-badlands-14934.herokuapp.com/order/${_id}`;
+        const url = `https://allegro-server-production-4215.up.railway.app/order/${_id}`;
         console.log(url)
         fetch(url, {
           method: "DELETE",

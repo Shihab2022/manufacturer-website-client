@@ -6,7 +6,7 @@ import {  RiDoubleQuotesL ,RiDoubleQuotesR} from "react-icons/ri";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://frozen-badlands-14934.herokuapp.com/review")
+    fetch("https://allegro-server-production-4215.up.railway.app/review")
     // fetch("http://localhost:5000/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));

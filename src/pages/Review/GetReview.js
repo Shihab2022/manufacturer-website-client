@@ -11,7 +11,7 @@ const GetReview = () => {
       ratting: e.target.ratting.value,
       about: e.target.textArea.value,
     };
-    fetch("https://frozen-badlands-14934.herokuapp.com/review", {
+    fetch("https://allegro-server-production-4215.up.railway.app/review", {
       // fetch('http://localhost:5000/review', {
       method: "POST",
       headers: {

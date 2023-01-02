@@ -12,7 +12,7 @@ const useToken=user=>{
             name : name
         }
         if(email){
-            fetch(`https://frozen-badlands-14934.herokuapp.com/user/${email}`,{
+            fetch(`https://allegro-server-production-4215.up.railway.app/user/${email}`,{
             // fetch(`http://localhost:5000/user/${email}`,{
                 method:'PUT',
                 headers:{

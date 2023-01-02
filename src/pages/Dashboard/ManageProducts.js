@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
     const Swal = require("sweetalert2");
 
-    const { data:products, isLoading, refetch } = useQuery('orders', () =>fetch('https://frozen-badlands-14934.herokuapp.com/tools').then(res =>res.json()))
+    const { data:products, isLoading, refetch } = useQuery('orders', () =>fetch('https://allegro-server-production-4215.up.railway.app/tools').then(res =>res.json()))
     
     if(isLoading){
         return <Loading></Loading>
@@ -23,7 +23,7 @@ const ManageProducts = () => {
         }).then((result) => {
           if (result.isConfirmed) {
             // const url = `http://localhost:5000/tools/${_id}`;
-            const url = `https://frozen-badlands-14934.herokuapp.com/tools/${_id}`;
+            const url = `https://allegro-server-production-4215.up.railway.app/tools/${_id}`;
             fetch(url, {
               method: "DELETE",
               headers: {

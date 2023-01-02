@@ -7,7 +7,7 @@ const useAdmin=user=>{
         const email=user?.email
         if(email){
             // fetch(`http://localhost:5000/admin/${email}`,{
-            fetch(`https://frozen-badlands-14934.herokuapp.com/admin/${email}`,{
+            fetch(`https://allegro-server-production-4215.up.railway.app/admin/${email}`,{
                 method:'GET',
                 headers:{
                     'content-type':'application/json',

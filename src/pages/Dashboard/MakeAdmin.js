@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     refetch,
   } = useQuery("users", () =>
     // fetch("http://localhost:5000/users",{
-    fetch("https://frozen-badlands-14934.herokuapp.com/users", {
+    fetch("https://allegro-server-production-4215.up.railway.app/users", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,7 @@ const MakeAdmin = () => {
   //   console.log(users)
   const makeAdmin = (id) => {
     // const url = `http://localhost:5000/user/admin/${id}`;
-    const url = `https://frozen-badlands-14934.herokuapp.com/user/admin/${id}`;
+    const url = `https://allegro-server-production-4215.up.railway.app/user/admin/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

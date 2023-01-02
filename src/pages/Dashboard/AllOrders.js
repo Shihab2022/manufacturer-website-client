@@ -7,14 +7,14 @@ const AllOrders = () => {
     isLoading,
     refetch,
   } = useQuery("orders", () =>
-    fetch("https://frozen-badlands-14934.herokuapp.com/order").then((res) =>
+    fetch("https://allegro-server-production-4215.up.railway.app/order").then((res) =>
       res.json()
     )
   );
   // const { data:orders, isLoading, refetch } = useQuery('orders', () =>fetch('http://localhost:5000/order').then(res =>res.json()))
 
   const handleShift = (id) => {
-    const url = `'https://frozen-badlands-14934.herokuapp.com/order_shift/${id}`;
+    const url = `'https://allegro-server-production-4215.up.railway.app/order_shift/${id}`;
 
     fetch(url, {
       method: "PATCH",

@@ -11,7 +11,7 @@ const MyProfile = () => {
   
   useEffect(() => {
     // fetch(`http://localhost:5000/user/${user?.email}`)
-    fetch(`https://frozen-badlands-14934.herokuapp.com/${user?.email}`)
+    fetch(`https://allegro-server-production-4215.up.railway.app/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [user,users]);
@@ -44,7 +44,7 @@ const updateProfile=e=>{
                     number:e.target.number.value,
                     img:image
                 }
-                const url=`https://frozen-badlands-14934.herokuapp.com/updateUser/${user?.email}`
+                const url=`https://allegro-server-production-4215.up.railway.app/updateUser/${user?.email}`
                 // const url=`http://localhost:5000/updateUser/${user?.email}`
                 fetch(url, {
                     method: 'POST',
